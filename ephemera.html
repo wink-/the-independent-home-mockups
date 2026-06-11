@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kitchen Table Evidence Board - The Independent Home mockup</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{--tape:#d9c089;--news:#f8f0dc;--receipt:#fffdf3;--pencil:#394035;--red:#a7472e;--blue:#354f65}
+    body.ephemera{background:
+      radial-gradient(circle at 10% 8%,rgba(255,255,255,.18),transparent 26%),
+      linear-gradient(90deg,rgba(76,52,35,.10) 1px,transparent 1px),
+      linear-gradient(rgba(76,52,35,.08) 1px,transparent 1px),
+      #d6c09a;background-size:auto,46px 46px,46px 46px;color:var(--ink)}
+    .board-wrap{max-width:1240px;margin:auto;padding:22px}
+    .crumb{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:#5e4938}
+    .board-hero{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:28px;align-items:start;padding:34px 0 18px}
+    .headline-note{position:relative;background:var(--news);border:2px solid #2b2b24;box-shadow:12px 14px 0 rgba(38,31,22,.18);padding:34px 36px 30px;transform:rotate(-.7deg)}
+    .headline-note:before,.clip:before,.receipt:before,.scan-card:before{content:"";position:absolute;width:96px;height:26px;background:rgba(217,192,137,.72);box-shadow:0 1px 3px rgba(0,0,0,.14);top:-14px;left:32px;transform:rotate(-4deg)}
+    .headline-note h1{font-family:var(--serif);font-size:clamp(44px,7vw,92px);line-height:.88;letter-spacing:-.06em;margin:10px 0 18px}
+    .deck{font-family:var(--serif);font-size:clamp(19px,2.2vw,28px);line-height:1.18;max-width:760px}
+    .evidence-tag{display:inline-block;border:1px solid var(--ink);border-radius:999px;padding:4px 10px;background:#fff8ea;font-family:var(--mono);font-size:12px;text-transform:uppercase;margin:4px 5px 0 0}
+    .case-file{background:#2b3328;color:#fff8ea;border:2px solid #1e241d;box-shadow:10px 10px 0 rgba(38,31,22,.18);padding:20px;position:relative;transform:rotate(1deg)}
+    .case-file h2{font-family:var(--serif);font-size:34px;line-height:1;margin:8px 0 12px}.case-file p{color:#efe5d0}.case-file .rule{border-top:1px dashed rgba(255,248,234,.45);margin:14px 0}
+    .pin-board{position:relative;display:grid;grid-template-columns:1.05fr .85fr 1fr;grid-auto-rows:minmax(150px,auto);gap:22px;padding:28px 0 44px}
+    .clip,.receipt,.scan-card,.photo-card,.string-card{position:relative;background:var(--news);border:1.5px solid rgba(32,37,31,.82);box-shadow:7px 9px 0 rgba(38,31,22,.15);padding:20px}
+    .clip h3,.receipt h3,.scan-card h3,.photo-card h3,.string-card h3{font-family:var(--serif);font-size:28px;line-height:1.05;margin:8px 0 10px}.clip p,.receipt p,.scan-card p,.photo-card p,.string-card p{margin:0 0 12px}
+    .clip{transform:rotate(-1.4deg)}.receipt{background:var(--receipt);font-family:var(--mono);font-size:14px;transform:rotate(1.1deg)}.scan-card{background:#fff8ea;grid-row:span 2;transform:rotate(.8deg)}.photo-card{background:#f4ead3;transform:rotate(-.8deg)}.string-card{background:#efe1bf;transform:rotate(1.7deg)}
+    .torn{border-top:2px dashed rgba(32,37,31,.28);padding-top:12px}.marker{background:rgba(167,71,46,.13);box-decoration-break:clone;padding:0 4px}.blue{color:var(--blue)}
+    .scan-view{min-height:310px;background:repeating-linear-gradient(#fff8ea,#fff8ea 27px,rgba(65,88,59,.18) 28px);border:1px dashed var(--muted);padding:22px;font-family:"Comic Sans MS","Bradley Hand",cursive;font-size:21px;line-height:1.35;color:#25261d}.transcript{display:none;background:#fbf5e8;border:1px solid rgba(32,37,31,.25);padding:18px}.scan-card.show-transcript .scan-view{display:none}.scan-card.show-transcript .transcript{display:block}
+    .e-btn{appearance:none;border:2px solid var(--ink);background:#fff8ea;color:var(--ink);padding:9px 12px;font-family:var(--mono);font-weight:700;text-transform:uppercase;font-size:12px;cursor:pointer;box-shadow:3px 3px 0 rgba(32,37,31,.18)}
+    .note-pin{transition:transform .18s,box-shadow .18s}.note-pin.pinned{transform:rotate(0deg) translateY(-4px);box-shadow:0 0 0 4px rgba(167,71,46,.22),10px 12px 0 rgba(38,31,22,.17)}.pin-label{font-family:var(--mono);font-size:12px;color:var(--red);text-transform:uppercase}
+    .thread{position:absolute;height:2px;background:rgba(167,71,46,.45);transform-origin:left center;pointer-events:none}.thread.one{width:220px;left:30%;top:34%;transform:rotate(21deg)}.thread.two{width:250px;left:50%;top:60%;transform:rotate(-17deg)}.thread.three{width:180px;left:16%;top:72%;transform:rotate(-6deg)}
+    .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(167,71,46,.18);margin-right:7px}.source-strip{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 0}.source-strip span{background:#fff8ea;border:1px dashed rgba(32,37,31,.5);padding:7px 10px;font-family:var(--mono);font-size:12px}
+    @media(max-width:980px){.board-hero,.pin-board{grid-template-columns:1fr}.thread{display:none}.case-file,.headline-note,.clip,.receipt,.scan-card,.photo-card,.string-card{transform:none}}
+  </style>
+</head>
+<body class="ephemera">
+  <div class="board-wrap">
+    <header class="top">
+      <a href="index.html" style="text-decoration:none">The Independent Home mockups</a>
+      <nav class="nav"><a href="field-journal.html">Field journal</a><a href="ledger.html">Ledger</a><a href="homestead.html">Homestead</a><a href="terminal.html">Terminal</a><a href="ephemera.html">Ephemera</a><a href="blueprint.html">Blueprint</a><a href="workshop.html">Workshop</a></nav>
+    </header>
+
+    <main>
+      <section class="board-hero">
+        <div class="headline-note">
+          <div class="crumb">Version 5 / scraps + clippings</div>
+          <h1>Evidence that a normal house can buy back control.</h1>
+          <p class="deck">A kitchen-table direction for The Independent Home: receipts, hand notes, utility bills, seed packets, mileage logs, and exact transcripts gathered into one calm case file.</p>
+          <div class="source-strip" aria-label="Site themes">
+            <span>energy independence</span><span>food systems</span><span>financial freedom</span><span>digital privacy</span>
+          </div>
+        </div>
+        <aside class="case-file">
+          <div class="crumb" style="color:#d8ad61">Editorial rule</div>
+          <h2>No bunker cosplay. No SaaS gloss.</h2>
+          <p>Each article starts as a physical artifact. The scan stays in view. OCR is exact. Any computer summary is clearly labeled and kept subordinate to the original.</p>
+          <div class="rule"></div>
+          <p class="mono">CASE 004: Can a W2 homeowner make the house cheaper, more useful, and less dependent without turning life into a panic project?</p>
+        </aside>
+      </section>
+
+      <section class="pin-board" aria-label="Kitchen table evidence board">
+        <span class="thread one"></span><span class="thread two"></span><span class="thread three"></span>
+
+        <article class="clip note-pin">
+          <div class="pin-label"><span class="dot"></span>clipping / thesis</div>
+          <h3>I'm not a prepper. I just want leverage.</h3>
+          <p>The tone is practical self-sufficiency for people with jobs, mortgages, families, and limited weekends.</p>
+          <p><span class="marker">The emotional promise:</span> less fragility, more options, and fewer systems that can push you around.</p>
+          <button class="e-btn pin-toggle" type="button">Pin this note</button>
+        </article>
+
+        <article class="receipt note-pin">
+          <div class="pin-label"><span class="dot"></span>receipt / monthly control ledger</div>
+          <h3>March house math</h3>
+          <p>UTILITY OFFSET .......... 71%</p>
+          <p>EV CHARGING HOME ....... 412 mi</p>
+          <p>GROCERY REPLACED ....... berries, greens</p>
+          <p>CASH RESERVE ........... still boring, still vital</p>
+          <div class="torn">Computer note: turn this into a recurring card pattern from the Ledger direction.</div>
+        </article>
+
+        <article class="scan-card" id="scanCard">
+          <div class="pin-label"><span class="dot"></span>original notebook scan</div>
+          <h3>Solar is not a belief system.</h3>
+          <div class="scan-view">
+            solar is not a belief system.<br><br>
+            it is a machine on the roof. count what it makes. count what it costs. count what breaks.<br><br>
+            if it lowers the house's monthly burn and charges the car, good. if not, say that too.
+          </div>
+          <div class="transcript mono">
+Solar is not a belief system.
+
+It is a machine on the roof. Count what it makes. Count what it costs. Count what breaks.
+
+If it lowers the house's monthly burn and charges the car, good. If not, say that too.
+
+<span class="note">[Computer note: preserve the skeptical tone. This is practical, not ideological.]</span>
+          </div>
+          <p><button class="e-btn" id="scanToggle" type="button" aria-expanded="false">Show exact transcription</button></p>
+        </article>
+
+        <article class="photo-card note-pin">
+          <div class="pin-label"><span class="dot"></span>photo label / food system</div>
+          <h3>Perennials beat heroic gardening.</h3>
+          <p>Apple trees, blueberries, strawberries, freezer inventory, and smoothie math: the food section should feel like quiet compounding, not homestead theater.</p>
+          <p class="blue">Caption style: what was planted, what survived, what it replaced, what will be changed next season.</p>
+          <button class="e-btn pin-toggle" type="button">Pin this note</button>
+        </article>
+
+        <article class="string-card note-pin">
+          <div class="pin-label"><span class="dot"></span>index card / privacy</div>
+          <h3>Digital privacy belongs beside the garden.</h3>
+          <p>Independence is also passwords, backups, local files, fewer subscriptions, and knowing which tools own your workflow.</p>
+          <p><span class="marker">Computer additions are marked.</span> Reader trust comes from seeing exactly where automation helped and where it did not.</p>
+          <button class="e-btn pin-toggle" type="button">Pin this note</button>
+        </article>
+
+        <article class="clip note-pin">
+          <div class="pin-label"><span class="dot"></span>article package</div>
+          <h3>Build posts from artifacts, not categories.</h3>
+          <p>One page can combine the notebook scan, a typed transcript, a receipt, a stat card, and a short field note. The result feels collected rather than templated.</p>
+          <p class="mono">Next: solar receipt audit / Tesla Uber numbers / W2 optional plan / home server inventory</p>
+          <button class="e-btn pin-toggle" type="button">Pin this note</button>
+        </article>
+      </section>
+    </main>
+
+    <footer>Mockup: Ephemera Evidence Board. Scraps, clippings, scans, receipts, exact transcripts, and clearly labeled computer notes.</footer>
+  </div>
+
+  <script>
+    const scanCard = document.getElementById('scanCard');
+    const scanToggle = document.getElementById('scanToggle');
+    scanToggle.addEventListener('click', () => {
+      const showing = scanCard.classList.toggle('show-transcript');
+      scanToggle.textContent = showing ? 'Show original scan' : 'Show exact transcription';
+      scanToggle.setAttribute('aria-expanded', String(showing));
+    });
+
+    document.querySelectorAll('.pin-toggle').forEach((button) => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.note-pin');
+        const pinned = card.classList.toggle('pinned');
+        button.textContent = pinned ? 'Pinned to board' : 'Pin this note';
+      });
+    });
+  </script>
+</body>
+</html>
