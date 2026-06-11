@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Workshop Manual - The Independent Home mockup</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{--manual-blue:#24394a;--manual-cream:#fbf4e6;--manual-red:#ad4d35;--manual-green:#405c3d;--manual-line:rgba(32,37,31,.22)}
+    body{background:linear-gradient(90deg,rgba(36,57,74,.055) 1px,transparent 1px),linear-gradient(rgba(36,57,74,.045) 1px,transparent 1px),var(--paper);background-size:24px 24px}
+    .top a[aria-current="page"]{border-bottom:2px solid var(--rust)}
+    .manual-shell{border:3px solid var(--ink);background:rgba(255,248,234,.76);box-shadow:12px 12px 0 rgba(36,57,74,.14);border-radius:26px;overflow:hidden;margin-top:26px}
+    .manual-band{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:var(--manual-blue);color:#fff8ea;padding:18px 22px;border-bottom:3px solid var(--ink);font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;font-size:13px}
+    .manual-band b{color:#f2c36c}.manual-id{border:1px solid rgba(255,248,234,.45);padding:8px 10px;border-radius:999px;white-space:nowrap}
+    .workshop-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;padding:34px 26px 22px;align-items:start}
+    .manual-title{font-family:var(--serif);font-size:clamp(42px,6vw,76px);line-height:.92;letter-spacing:-.05em;margin:10px 0 18px;max-width:760px}
+    .manual-lede{font-family:var(--serif);font-size:clamp(19px,2.05vw,25px);line-height:1.24;color:#2b2f29;max-width:740px}
+    .manual-note{background:#fff8ea;border:2px solid var(--ink);border-radius:18px;padding:18px;box-shadow:7px 7px 0 rgba(32,37,31,.13);position:relative}
+    .manual-note:before{content:"";position:absolute;inset:10px;border:1px dashed rgba(32,37,31,.28);border-radius:12px;pointer-events:none}
+    .stamp{display:inline-block;transform:rotate(-2deg);border:2px solid var(--manual-red);color:var(--manual-red);font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;padding:7px 10px;border-radius:4px;margin-bottom:14px;background:rgba(173,77,53,.05)}
+    .path-picker{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.path-btn{border:2px solid var(--ink);background:#fff8ea;border-radius:14px;padding:13px 11px;text-align:left;cursor:pointer;font:inherit;box-shadow:4px 4px 0 rgba(32,37,31,.12)}.path-btn:hover,.path-btn.active{background:#e8d9bd;transform:translateY(-1px)}.path-btn strong{display:block;font-family:var(--mono);font-size:12px;text-transform:uppercase;color:var(--manual-red);margin-bottom:5px}.path-result{margin-top:14px;border-left:5px solid var(--manual-green);background:rgba(65,88,59,.08);padding:14px 16px;border-radius:0 12px 12px 0}
+    .manual-section{padding:26px;border-top:2px solid var(--manual-line)}.manual-section h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:.98;letter-spacing:-.035em;margin:8px 0 16px}.two-col{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:start}.stack{display:grid;gap:14px}.product-card{background:#fff8ea;border:2px solid var(--ink);border-radius:18px;padding:18px;box-shadow:6px 6px 0 rgba(32,37,31,.12)}.product-card h3{margin:0 0 8px;font-size:22px}.price{font-family:var(--mono);color:var(--manual-blue);font-weight:700}.plain-list{margin:12px 0 0;padding-left:20px}.plain-list li{margin:8px 0}.manual-table{width:100%;border-collapse:collapse;background:#fff8ea;border:2px solid var(--ink);border-radius:16px;overflow:hidden;display:table}.manual-table th,.manual-table td{border-bottom:1px solid var(--manual-line);padding:13px;text-align:left;vertical-align:top}.manual-table th{font-family:var(--mono);text-transform:uppercase;font-size:12px;color:var(--manual-red);background:rgba(216,173,97,.18)}.manual-table tr:last-child td{border-bottom:0}.checklist{display:grid;gap:10px}.check-row{display:flex;gap:12px;align-items:flex-start;background:#fff8ea;border:1px solid var(--manual-line);border-radius:12px;padding:12px}.check-row input{margin-top:5px;accent-color:var(--manual-green)}.progress-rail{height:12px;border:2px solid var(--ink);border-radius:999px;background:#f6ead5;overflow:hidden;margin:14px 0 8px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--manual-green),#d8ad61);transition:width .2s ease}.computer-note{font-family:var(--mono);font-size:13px;color:var(--manual-red);background:rgba(173,77,53,.08);padding:10px;border-radius:10px}.cta-strip{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;background:#20251f;color:#fff8ea;border-radius:22px;padding:20px}.cta-strip .btn{background:#fff8ea;color:#20251f}.cta-strip .btn.alt{background:transparent;color:#fff8ea;border-color:#fff8ea}.tiny{font-size:13px;color:var(--muted)}
+    @media(max-width:900px){.workshop-hero,.two-col,.cta-strip{grid-template-columns:1fr}.path-picker{grid-template-columns:repeat(2,1fr)}.manual-band{grid-template-columns:1fr}.manual-id{width:max-content}.manual-table{font-size:14px}}
+    @media(max-width:580px){.path-picker{grid-template-columns:1fr}.manual-shell{border-radius:16px}.workshop-hero,.manual-section{padding:18px}.manual-band{padding:14px}.manual-table th,.manual-table td{padding:10px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a href="index.html" style="text-decoration:none">The Independent Home mockups</a>
+      <nav class="nav" aria-label="Mockup directions"><a href="field-journal.html">Field journal</a><a href="ledger.html">Ledger</a><a href="homestead.html">Homestead</a><a href="terminal.html">Terminal</a><a href="ephemera.html">Ephemera</a><a href="blueprint.html">Blueprint</a><a href="workshop.html">Workshop</a></nav>
+    </header>
+
+    <main class="manual-shell">
+      <div class="manual-band">
+        <div>Version 7 / <b>Course + workshop operating manual</b></div>
+        <div class="manual-id">IH-MANUAL-001</div>
+      </div>
+
+      <section class="workshop-hero">
+        <div>
+          <div class="kicker">A calmer product layer for a handwritten-first site</div>
+          <h1 class="manual-title">Build one independent system at a time.</h1>
+          <p class="manual-lede">A practical workshop direction for homeowners and W2 workers who want fewer bills, better fallbacks, and more control without turning their life into a bunker, a hustle funnel, or a panic habit.</p>
+          <p>This version keeps the paper-first credibility: scans, exact transcripts, receipts, and computer notes remain visible. The paid layer is framed as operating manuals: short, honest workshops that help a reader finish one real project.</p>
+          <div class="path-picker" aria-label="Choose a starter path">
+            <button class="path-btn active" data-path="energy"><strong>Energy</strong>Cut the home's weak points first.</button>
+            <button class="path-btn" data-path="food"><strong>Food</strong>Start a low-drama perennial system.</button>
+            <button class="path-btn" data-path="money"><strong>Money</strong>Make W2 feel less absolute.</button>
+            <button class="path-btn" data-path="privacy"><strong>Privacy</strong>Reduce digital exposure quietly.</button>
+          </div>
+          <div class="path-result" id="pathResult" aria-live="polite">
+            <b>Start with the 7-Day Home Energy Audit.</b><br>Map your utility bill, phantom loads, freezer risk, EV charging, and solar assumptions before buying equipment.
+          </div>
+        </div>
+
+        <aside class="manual-note">
+          <div class="stamp">Not a guru course</div>
+          <h2 style="margin-top:0">The sales promise is restraint.</h2>
+          <p>Lead magnets are useful field sheets, not bait. Paid products are scoped workshops with receipts, decision trees, and maintenance schedules.</p>
+          <p class="mono">[Computer note: keep the offer language specific. No "escape the system" copy, no fake countdowns, no miracle ROI.]</p>
+          <ul class="plain-list">
+            <li>Free: printable checklists and exact notebook scans.</li>
+            <li>Paid: guided builds, calculators, monthly office hours.</li>
+            <li>Trust: show costs, regrets, and what Rob would not buy again.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="manual-section">
+        <div class="two-col">
+          <div>
+            <div class="kicker">Lead magnet library</div>
+            <h2>Free tools that feel like tools.</h2>
+            <p>Each opt-in should solve a small problem in one sitting and naturally point to a deeper workshop only when the reader needs help implementing it.</p>
+            <p class="computer-note">[Computer note: the handwritten source image can sit beside each download so the funnel still feels authored, not manufactured.]</p>
+          </div>
+          <div class="stack">
+            <article class="product-card">
+              <h3>7-Day Home Control Audit</h3>
+              <p>A printable walkthrough for power, water, food, money, and privacy weak spots. The reader leaves with a ranked project list, not a lecture.</p>
+              <div class="price">Free PDF + scan</div>
+            </article>
+            <article class="product-card">
+              <h3>Solar Reality Worksheet</h3>
+              <p>Track production, financing, tax credits, EV charging, utility offset, and the uncomfortable line item everyone forgets: maintenance and opportunity cost.</p>
+              <div class="price">Free spreadsheet</div>
+            </article>
+            <article class="product-card">
+              <h3>W2 Optional Number Sheet</h3>
+              <p>A grounded monthly ledger for cash reserve, health insurance, debt, side income, and the minimum life cost that makes work less powerful.</p>
+              <div class="price">Free calculator</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="manual-section">
+        <div class="kicker">Paid workshop ladder</div>
+        <h2>Small manuals before big promises.</h2>
+        <table class="manual-table">
+          <thead>
+            <tr><th>Product</th><th>Outcome</th><th>Tone guardrail</th><th>Price posture</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Home Energy Independence: First 30 Days</b></td>
+              <td>Audit loads, choose backup priorities, understand solar math, and make a no-regrets first purchase list.</td>
+              <td>No apocalypse framing. Reliability, bills, and optionality.</td>
+              <td>Accessible workshop; receipts included.</td>
+            </tr>
+            <tr>
+              <td><b>The Backyard Food Base Layer</b></td>
+              <td>Plan apples, blueberries, strawberries, freezer habits, and a smoothie/freezer inventory that survives busy weeks.</td>
+              <td>No homestead cosplay. Fit it around W2 life.</td>
+              <td>Seasonal cohort or self-paced manual.</td>
+            </tr>
+            <tr>
+              <td><b>W2 Optional Operating Ledger</b></td>
+              <td>Build a monthly dashboard for basics covered, cash reserve, side income, covered-call/secured-put experiments, and ACA/MAGI awareness.</td>
+              <td>No finance bro language. Numbers, risk notes, humility.</td>
+              <td>Higher price only if templates and office hours are included.</td>
+            </tr>
+            <tr>
+              <td><b>Digital Quiet Week</b></td>
+              <td>Reduce account sprawl, harden passwords, improve device backups, and choose what not to put online.</td>
+              <td>No paranoia. Less exposure, more calm.</td>
+              <td>Low-cost challenge; natural email entry point.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="manual-section">
+        <div class="two-col">
+          <div>
+            <div class="kicker">Sample module checklist</div>
+            <h2>Module 1: make the house legible.</h2>
+            <p>This interaction shows how a workshop page can feel operational rather than salesy. The reader checks off the first pass and sees progress immediately.</p>
+            <div class="progress-rail" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="tiny" id="progressText">0 of 5 field steps complete</div>
+          </div>
+          <div class="checklist" id="checklist">
+            <label class="check-row"><input type="checkbox"><span><b>Find the last 12 utility bills.</b><br>Write down kWh, total cost, and the month that hurt most.</span></label>
+            <label class="check-row"><input type="checkbox"><span><b>Mark the critical loads.</b><br>Freezer, fridge, well pump, medical devices, router, heat source, EV charging.</span></label>
+            <label class="check-row"><input type="checkbox"><span><b>Photograph the panel and shutoffs.</b><br>Add labels before buying batteries, generators, or solar gear.</span></label>
+            <label class="check-row"><input type="checkbox"><span><b>Write the first failure plan.</b><br>What happens during a 4-hour, 24-hour, and 3-day outage?</span></label>
+            <label class="check-row"><input type="checkbox"><span><b>Choose the next honest action.</b><br>One purchase, one repair, or one thing to measure for another month.</span></label>
+          </div>
+        </div>
+      </section>
+
+      <section class="manual-section">
+        <div class="cta-strip">
+          <div>
+            <div class="kicker" style="color:#d8ad61">Conversion direction</div>
+            <h2 style="margin:6px 0 8px">Join the next practical build note.</h2>
+            <p style="margin:0">Weekly field notes, exact transcripts, and one useful worksheet at a time. No crisis countdown, no manufactured scarcity.</p>
+          </div>
+          <p style="margin:0"><a class="btn" href="#">Get the free audit</a> <a class="btn alt" href="#">View workshop syllabus</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>Mockup: Workshop Manual. Course/product direction with calm lead magnets, scoped paid manuals, and paper-first proof.</footer>
+  </div>
+
+  <script>
+    const pathCopy = {
+      energy: ['Start with the 7-Day Home Energy Audit.', 'Map your utility bill, phantom loads, freezer risk, EV charging, and solar assumptions before buying equipment.'],
+      food: ['Start with the Backyard Base Layer.', 'Pick two perennial foods, one freezer habit, and one weekly meal that makes the yard useful even during a normal W2 week.'],
+      money: ['Start with the W2 Optional Number Sheet.', 'Find the monthly minimum, cash comfort target, debt drag, and realistic side-income gap before making dramatic career decisions.'],
+      privacy: ['Start with Digital Quiet Week.', 'Clean up passwords, account sprawl, backups, and public exposure with boring steps that actually get finished.']
+    };
+
+    document.querySelectorAll('.path-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.path-btn').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        const selected = pathCopy[button.dataset.path];
+        document.getElementById('pathResult').innerHTML = '<b>' + selected[0] + '</b><br>' + selected[1];
+      });
+    });
+
+    const checks = Array.from(document.querySelectorAll('#checklist input'));
+    const fill = document.getElementById('progressFill');
+    const text = document.getElementById('progressText');
+    function updateProgress(){
+      const done = checks.filter(item => item.checked).length;
+      fill.style.width = (done / checks.length * 100) + '%';
+      text.textContent = done + ' of ' + checks.length + ' field steps complete';
+    }
+    checks.forEach(item => item.addEventListener('change', updateProgress));
+    updateProgress();
+  </script>
+</body>
+</html>

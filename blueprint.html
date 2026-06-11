@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home Systems Blueprint - The Independent Home mockup</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --blueprint:#102f48;
+      --blueprint-2:#164765;
+      --blueprint-3:#0b2538;
+      --cyan:#9ad7ec;
+      --chalk:#eef8f6;
+      --paper:#f3ead8;
+      --ink:#20251f;
+      --rust:#9a4f2f;
+      --gold:#d8ad61;
+      --line:rgba(154,215,236,.28);
+      --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      --serif:Georgia,serif;
+      --sans:system-ui,-apple-system,Segoe UI,sans-serif;
+    }
+    body{
+      margin:0;
+      color:var(--chalk);
+      font-family:var(--sans);
+      line-height:1.55;
+      background:
+        linear-gradient(rgba(154,215,236,.07) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(154,215,236,.07) 1px,transparent 1px),
+        linear-gradient(rgba(154,215,236,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(154,215,236,.035) 1px,transparent 1px),
+        radial-gradient(circle at 20% 0%,rgba(216,173,97,.14),transparent 32rem),
+        var(--blueprint);
+      background-size:40px 40px,40px 40px,8px 8px,8px 8px,auto,auto;
+    }
+    a{color:inherit}.wrap{max-width:1240px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:2px solid rgba(238,248,246,.82);padding-bottom:16px;font-family:var(--mono);font-size:13px;text-transform:uppercase}.top>a{text-decoration:none}.nav{display:flex;gap:12px;flex-wrap:wrap}.nav a{text-decoration:none;border-bottom:1px dashed rgba(238,248,246,.58)}.nav a.active{color:var(--gold);border-bottom-color:var(--gold)}
+    .sheet{position:relative;border:2px solid rgba(238,248,246,.82);box-shadow:0 28px 80px rgba(0,0,0,.28);margin:28px 0;padding:clamp(18px,3vw,34px);background:linear-gradient(135deg,rgba(255,255,255,.035),rgba(255,255,255,.015));overflow:hidden}.sheet:before{content:"";position:absolute;inset:14px;border:1px solid rgba(238,248,246,.32);pointer-events:none}.sheet:after{content:"TIH-04 / RESIDENTIAL INDEPENDENCE SYSTEM";position:absolute;right:26px;bottom:16px;font-family:var(--mono);font-size:11px;color:rgba(238,248,246,.45);letter-spacing:.12em}.hero-blue{display:grid;grid-template-columns:1.02fr .98fr;gap:30px;align-items:stretch;position:relative;z-index:1}.kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.11em;color:var(--gold);font-size:12px}.title{font-family:var(--serif);font-size:clamp(48px,7vw,92px);line-height:.88;letter-spacing:-.06em;margin:10px 0 18px}.lede{font-size:clamp(19px,2.1vw,26px);font-family:var(--serif);line-height:1.22;max-width:760px;color:#f8fcfb}.spec-copy{max-width:720px;color:rgba(238,248,246,.82)}.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border:1px solid rgba(238,248,246,.8);padding:11px 14px;background:rgba(238,248,246,.08)}.btn.alt{border-style:dashed;background:transparent}.blue-card{border:1px solid rgba(238,248,246,.7);background:rgba(7,22,34,.38);padding:20px;box-shadow:10px 10px 0 rgba(0,0,0,.16)}.stamp{display:inline-flex;border:2px solid var(--gold);color:var(--gold);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;padding:8px 10px;transform:rotate(-2deg);margin-bottom:16px}.plan{position:relative;min-height:420px;border:1px solid rgba(154,215,236,.54);background:rgba(9,30,45,.55);overflow:hidden}.plan:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,transparent 0 58%,rgba(154,215,236,.14) 59% 60%,transparent 61%),linear-gradient(30deg,transparent 48%,rgba(154,215,236,.18) 49% 50%,transparent 51%),linear-gradient(150deg,transparent 48%,rgba(154,215,236,.13) 49% 50%,transparent 51%);opacity:.9}.node{position:absolute;width:120px;min-height:78px;border:1px solid rgba(238,248,246,.75);background:rgba(16,47,72,.9);padding:10px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;transition:.25s ease}.node b{display:block;font-size:15px;color:#fff;margin-bottom:2px}.node small{color:rgba(238,248,246,.7);text-transform:none;letter-spacing:0}.node.power{left:8%;top:12%}.node.food{right:10%;top:16%}.node.water{left:14%;bottom:16%}.node.money{right:12%;bottom:13%}.node.core{left:50%;top:50%;transform:translate(-50%,-50%);width:150px;min-height:96px;border-color:var(--gold);box-shadow:0 0 0 6px rgba(216,173,97,.09)}.line{position:absolute;height:2px;background:rgba(154,215,236,.48);transform-origin:left center;transition:.25s ease}.l1{left:25%;top:29%;width:32%;transform:rotate(28deg)}.l2{left:54%;top:31%;width:28%;transform:rotate(-25deg)}.l3{left:27%;bottom:28%;width:30%;transform:rotate(-24deg)}.l4{left:55%;bottom:27%;width:27%;transform:rotate(22deg)}body:not(.show-power) .node.power,body:not(.show-power) .l1,body:not(.show-food) .node.food,body:not(.show-food) .l2,body:not(.show-water) .node.water,body:not(.show-water) .l3,body:not(.show-money) .node.money,body:not(.show-money) .l4{opacity:.22;filter:grayscale(1)}.toggles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.toggle{cursor:pointer;border:1px solid rgba(238,248,246,.72);background:rgba(238,248,246,.06);color:var(--chalk);padding:12px 10px;text-align:left;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.07em}.toggle[aria-pressed="true"]{background:rgba(216,173,97,.18);border-color:var(--gold);color:#fff}.readout{margin-top:14px;border-left:3px solid var(--gold);padding:8px 0 8px 14px;color:rgba(238,248,246,.82);font-family:var(--mono);font-size:13px}.section{position:relative;z-index:1;padding:22px 0}.section-title{font-family:var(--serif);font-size:clamp(32px,4vw,52px);letter-spacing:-.04em;line-height:1;margin:8px 0 18px}.manual-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.manual-card{border:1px solid rgba(238,248,246,.64);background:rgba(7,22,34,.38);padding:18px;min-height:220px;position:relative}.manual-card:before{content:attr(data-code);position:absolute;right:12px;top:10px;font-family:var(--mono);font-size:11px;color:rgba(238,248,246,.42)}.manual-card h3{font-family:var(--serif);font-size:26px;line-height:1;margin:18px 0 10px}.manual-card p{color:rgba(238,248,246,.78)}.meta{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold);margin-top:auto}.two-col{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.paper-inset{background:var(--paper);color:var(--ink);border:1px solid rgba(32,37,31,.7);box-shadow:8px 8px 0 rgba(0,0,0,.18);padding:20px;font-family:var(--mono);font-size:13px;white-space:pre-wrap}.revision{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12px}.revision th,.revision td{border:1px solid rgba(238,248,246,.38);padding:10px;text-align:left}.revision th{color:var(--gold);text-transform:uppercase;letter-spacing:.08em}.callout{border:1px dashed rgba(238,248,246,.65);padding:16px;background:rgba(238,248,246,.055);color:rgba(238,248,246,.84)}footer{font-family:var(--mono);font-size:12px;color:rgba(238,248,246,.62);border-top:1px solid rgba(238,248,246,.4);padding:18px 0 6px;margin-top:16px}@media(max-width:900px){.hero-blue,.two-col{grid-template-columns:1fr}.manual-grid{grid-template-columns:repeat(2,1fr)}.plan{min-height:360px}}@media(max-width:580px){.wrap{padding:14px}.top{align-items:flex-start;flex-direction:column}.manual-grid,.toggles{grid-template-columns:1fr}.node{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto;margin:10px}.node.core{transform:none}.line{display:none}.plan{min-height:auto;padding:10px}.title{font-size:46px}}
+  </style>
+</head>
+<body class="show-power show-food show-water show-money">
+  <div class="wrap">
+    <header class="top">
+      <a href="index.html">The Independent Home mockups</a>
+      <nav class="nav" aria-label="Mockup directions"><a href="field-journal.html">Field journal</a><a href="ledger.html">Ledger</a><a href="homestead.html">Homestead</a><a href="terminal.html">Terminal</a><a href="ephemera.html">Ephemera</a><a href="blueprint.html">Blueprint</a><a href="workshop.html">Workshop</a></nav>
+    </header>
+
+    <main>
+      <section class="sheet">
+        <div class="hero-blue">
+          <div>
+            <div class="kicker">Version 6 / home systems blueprint</div>
+            <h1 class="title">A technical manual for buying back control.</h1>
+            <p class="lede">The Independent Home as a calm field guide for ordinary homeowners: one house, four operating systems, and a paper trail for every claim.</p>
+            <p class="spec-copy">Not bunker content. Not generic productivity. This direction treats the home like equipment worth understanding: solar production, garden yield, water resilience, cash reserve, privacy, and the W2-to-optional path documented in plain English.</p>
+            <div class="btn-row">
+              <a class="btn" href="#systems">Inspect systems</a>
+              <a class="btn alt" href="#manual">Open manual pages</a>
+            </div>
+          </div>
+
+          <aside class="blue-card" aria-label="System plan interaction">
+            <span class="stamp">Draft plate / homeowner edition</span>
+            <div class="plan" id="systems">
+              <div class="line l1" aria-hidden="true"></div>
+              <div class="line l2" aria-hidden="true"></div>
+              <div class="line l3" aria-hidden="true"></div>
+              <div class="line l4" aria-hidden="true"></div>
+              <div class="node power"><b>Power</b><small>Solar, EV charging, utility offset, outage plan</small></div>
+              <div class="node food"><b>Food</b><small>Apples, berries, freezer, low-drama garden</small></div>
+              <div class="node water"><b>Water</b><small>Storage, filtration, irrigation, maintenance</small></div>
+              <div class="node money"><b>Money</b><small>Cash reserve, side income, W2 optional math</small></div>
+              <div class="node core"><b>Home OS</b><small>Less dependence. More choices. Receipts kept.</small></div>
+            </div>
+            <div class="toggles" aria-label="Toggle system layers">
+              <button class="toggle" type="button" data-layer="power" aria-pressed="true">Power</button>
+              <button class="toggle" type="button" data-layer="food" aria-pressed="true">Food</button>
+              <button class="toggle" type="button" data-layer="water" aria-pressed="true">Water</button>
+              <button class="toggle" type="button" data-layer="money" aria-pressed="true">Money</button>
+            </div>
+            <div class="readout" id="layer-readout">All system layers visible: power, food, water, money.</div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="manual">
+        <div class="kicker">Manual index</div>
+        <h2 class="section-title">Practical independence, filed by subsystem.</h2>
+        <div class="manual-grid">
+          <article class="manual-card" data-code="PWR-01">
+            <h3>Energy Independence</h3>
+            <p>What the solar array actually produced, what the bill still said, how the Tesla changed the math, and which upgrades were worth doing first.</p>
+            <div class="meta">solar / EV / receipts</div>
+          </article>
+          <article class="manual-card" data-code="FIN-02">
+            <h3>W2 Optional Ledger</h3>
+            <p>A non-dramatic path to more freedom: monthly spend, emergency cash, covered-call income, debt payoff, ACA MAGI, and side-business runway.</p>
+            <div class="meta">money / annual plan</div>
+          </article>
+          <article class="manual-card" data-code="FOD-03">
+            <h3>Perennial Food Plan</h3>
+            <p>Apples, blueberries, strawberries, smoothies, freezer inventory, and the tiny systems that make food independence realistic for a busy worker.</p>
+            <div class="meta">garden / freezer / habits</div>
+          </article>
+          <article class="manual-card" data-code="PRV-04">
+            <h3>Digital Privacy Bay</h3>
+            <p>Phone, browser, passwords, backups, home network, and simple privacy defaults for people who want less exposure without becoming weird about it.</p>
+            <div class="meta">privacy / home tech</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section two-col">
+        <div class="paper-inset">FIELD NOTE SOURCE
+
+I am not a prepper. I just want more control.
+
+If the house can make some power, grow some food, cost less to run, and keep better records, work gets a little less powerful over my life.
+
+[Computer transcription exact. Computer notes stay bracketed.]</div>
+        <div class="callout">
+          <div class="kicker">Design rule</div>
+          <h2 class="section-title">Paper remains the proof. The blueprint is the interface.</h2>
+          <p>The strongest current direction is still handwritten-first. This divergent mockup keeps that trust model but changes the wrapper: each notebook entry becomes a service bulletin, parts list, revision note, or operating procedure.</p>
+          <p>Readers can skim the technical plate for the practical answer, then open the original handwritten scan when they want the human source.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="kicker">Revision log</div>
+        <table class="revision" aria-label="Example editorial revision log">
+          <thead><tr><th>Doc</th><th>Entry</th><th>Reader promise</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>OP-001</td><td>I'm not a prepper, I just want more control</td><td>Thesis in plain language; no rage bait</td><td>scan available</td></tr>
+            <tr><td>PWR-014</td><td>What my solar array actually cost</td><td>Production, payments, tax credits, regrets</td><td>needs annual update</td></tr>
+            <tr><td>FIN-021</td><td>My 3-year plan to make W2 optional by 50</td><td>Numbers, assumptions, and what would change the plan</td><td>monthly ledger linked</td></tr>
+            <tr><td>TRN-006</td><td>Tesla Uber numbers without lying to myself</td><td>Income after electricity, tires, insurance, depreciation</td><td>receipts attached</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>Mockup: Home Systems Blueprint. A technical-manual direction for calm self-sufficiency, with system-layer toggles and paper-source trust.</footer>
+  </div>
+
+  <script>
+    (function(){
+      const buttons = document.querySelectorAll('.toggle');
+      const readout = document.getElementById('layer-readout');
+      function updateReadout(){
+        const active = Array.from(buttons).filter(btn => btn.getAttribute('aria-pressed') === 'true').map(btn => btn.dataset.layer);
+        readout.textContent = active.length ? 'Visible system layers: ' + active.join(', ') + '.' : 'All overlays hidden. The Home OS core remains as the baseline.';
+      }
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const layer = button.dataset.layer;
+          const next = button.getAttribute('aria-pressed') !== 'true';
+          button.setAttribute('aria-pressed', String(next));
+          document.body.classList.toggle('show-' + layer, next);
+          updateReadout();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
