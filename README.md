@@ -2,6 +2,17 @@
 
 Static redesign mockups for a handwritten-first version of The Independent Home.
 
+<!-- PROJECT-DOCS:START -->
+## Project Docs
+
+- [Docs index](docs/index.md)
+- [Architecture](docs/architecture.md)
+- [Setup](docs/setup.md)
+- [Status](docs/status.md)
+- [Notes](docs/notes.md)
+- [Log](docs/log.md)
+<!-- PROJECT-DOCS:END -->
+
 Live site: https://wink-.github.io/the-independent-home-mockups/
 
 ## Directions
