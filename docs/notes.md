@@ -12,3 +12,4 @@ timestamp: 2026-07-06T00:00:00Z
 - README recommends Field Journal as the base direction.
 - Ledger stat cards, Workshop conversion sections, and Blueprint explainers are candidate modules for the final site.
 - Keep mockups dependency-free unless there is a deliberate reason to add a build system.
+- Each mockup direction is a standalone HTML file, so cross-direction design changes may need repeated manual edits.

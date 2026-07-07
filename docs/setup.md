@@ -24,7 +24,7 @@ python3 -m http.server 8000
 Lightweight validation available without installing dependencies:
 
 ```bash
-git status --short --branch
+git diff --check
 ```
 
 No automated test, lint, or build command is configured.
