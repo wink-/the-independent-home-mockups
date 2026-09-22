@@ -66,14 +66,16 @@ corporate stock-art styling.
 7. **Workshop Manual** — calm lead-magnet/course funnel built around operating manuals and checklists. *Made by: not recorded*
 8. **Home Almanac** — seasonal filing by power, food, water, money, and privacy; reader enters through the year, not the feed. *Made by: MiMo-V2.6-Flash Free (`mimo-v2.6-flash-free`)*
 9. **Proof Sheets** (`proof.html`) — two-colour risograph field zine: orange prints what went right, green prints what it cost, so mistakes and real costs get equal billing with the wins. *Made by: MiMo-V2.6-Flash Free (`mimo-v2.6-flash-free`)*
+10. **Dispatches** (`dispatches.html`) — postal correspondence from the property: every project mailed twice (what it gave us / what it took), with the returned envelopes filed alongside. *Made by: DeepSeek V4.1 Flash (`deepseek-v4.1-flash`)*
 
 ### Attribution notes
 
 - Directions **8–9** were built by `mimo-v2.6-flash-free` (MiMo-V2.6-Flash Free), OpenCode, September 2026.
+- Direction **10** (Dispatches) was built by `deepseek-v4.1-flash` (DeepSeek V4.1 Flash, provider `opencode-go`), OpenCode, September 2026.
 - Directions **1–7** predate this record. Git shows only author `Ubuntu` and no model metadata, so their model is **not recorded** — don't guess:
   - 1–4 — commit `d3fd932`, 2026-05-20, "Add Independent Home mockups"
   - 5–7 — commit `092cfc1`, 2026-06-11, "Add more Independent Home mockup directions"
-- Direction 8 (Almanac) and 9 (Proof Sheets) are still uncommitted in this branch.
+- Directions 8–9 were published to `main` on 2026-09-22 (merge `a0d9ddb`). Direction 10 is on branch `add-direction-dispatches-20260922`.
 - If you know which model built 1–7, record it here so future work can go back to it.
 
 Recommendation: use Field Journal as the base, then borrow Ledger stat cards,
