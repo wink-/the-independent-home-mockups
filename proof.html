@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Proof Sheets — a two-colour risograph field zine for The Independent Home. Orange prints the win, green prints the cost.">
+<title>Proof Sheets - The Independent Home mockup</title>
+<style>
+/* ============================================================
+   PROOF SHEETS — no inherited styles. Built from zero.
+   Two spot inks on uncoated stock:
+     ORANGE = what went right · GREEN = what it cost
+   Both get the same press run. The misprints stay in.
+   ============================================================ */
+:root{
+  --paper:#f2ede1; --stock:#fbf7ef; --band:#eae3d3;
+  --ink:#23201c; --muted:#6d6459;
+  --orange:#ff4a17; --orange-deep:#b0360f;
+  --green:#17794e; --over:#3b3d14;
+  --line:rgba(35,32,28,.2);
+  --pad:clamp(16px,3vw,28px);
+  --display:Impact,"Arial Black","Franklin Gothic Bold","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --hand:"Segoe Print","Bradley Hand","Chalkboard SE","Marker Felt","Comic Sans MS","Liberation Serif",cursive;
+  --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --rx:11px; --ry:7.5px;   /* live plate offset, driven by the slider */
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.55;
+  overflow-x:hidden;
+}
+/* press grain, sits over everything, ignores the mouse */
+body::after{
+  content:""; position:fixed; inset:0; z-index:60; pointer-events:none;
+  opacity:.17; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='170' height='170' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+h1,h2,h3,p,ul,figure,dl,dd{margin:0}
+ul{padding:0;list-style:none}
+svg{display:block}
+
+.page{max-width:1240px;margin:0 auto;padding:0 var(--pad) 64px}
+
+/* ---------- press-strip header ---------- */
+.masthead{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 26px;
+  align-items:baseline;padding:16px 0 12px;border-bottom:3px solid var(--ink);
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+}
+.masthead .brand{font-weight:700;letter-spacing:.2em}
+.masthead .job{color:var(--muted)}
+.masthead .job b{color:var(--green)}
+.nav{
+  display:flex;flex-wrap:wrap;gap:9px 14px;padding:13px 0 0;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+}
+.nav a{
+  text-decoration:none;padding-bottom:2px;border-bottom:2px solid rgba(255,74,23,.5);
+  transition:color .15s,border-color .15s;
+}
+.nav a:hover{color:var(--green);border-bottom-color:var(--green)}
+.nav a[aria-current="page"]{color:var(--green);border-bottom-color:var(--green);font-weight:700}
+.nav .home{color:var(--muted);border-bottom-color:transparent}
+
+/* ---------- cover ---------- */
+.cover{position:relative;display:grid;grid-template-columns:1.12fr .88fr;gap:36px;align-items:start;padding:52px 0 40px}
+.crop{position:absolute;width:26px;height:26px;pointer-events:none;border-color:var(--ink);opacity:.72}
+.crop.tl{top:-12px;left:-12px;border-top:2px solid;border-left:2px solid}
+.crop.tr{top:-12px;right:-12px;border-top:2px solid;border-right:2px solid}
+.crop.bl{bottom:-14px;left:-12px;border-bottom:2px solid;border-left:2px solid}
+.crop.br{bottom:-14px;right:-12px;border-bottom:2px solid;border-right:2px solid}
+
+.eyebrow{
+  display:flex;align-items:center;gap:11px;
+  font-family:var(--mono);font-size:12px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--green);
+}
+.eyebrow::before{content:"";flex:none;width:36px;height:13px;background:var(--orange);border:2px solid var(--ink)}
+
+/* the misregistered two-ink title */
+.cover-title{position:relative;z-index:0}
+.cover-title{
+  margin:16px 0 0;font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:clamp(58px,10.4vw,148px);line-height:.82;letter-spacing:-.035em;
+  color:var(--orange);white-space:pre-line;overflow-wrap:break-word;
+}
+.sect .hl{display:inline-block;position:relative;z-index:0;color:var(--orange);white-space:pre-line}
+.cover-title::before,.sect .hl::before{
+  content:attr(data-text);position:absolute;left:0;top:0;width:100%;
+  color:var(--green);mix-blend-mode:multiply;z-index:-1;pointer-events:none;
+  white-space:pre-line;
+  transform:translate(calc(var(--rx)*var(--rm,1)),calc(var(--ry)*var(--rm,1)));
+}
+
+.lede{margin-top:22px;font-size:clamp(17px,1.55vw,20.5px);line-height:1.5;max-width:33em}
+.lede b{font-weight:800}
+.lede .w{color:var(--orange-deep)}
+.lede .c{color:var(--green)}
+
+/* registration control — the toy */
+.regctl{
+  margin-top:28px;max-width:540px;background:var(--stock);
+  border:2.5px solid var(--ink);box-shadow:7px 7px 0 rgba(23,121,78,.35);padding:15px 17px 17px;
+}
+.regctl label{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  font-weight:700;margin-bottom:11px;
+}
+.regctl output{color:var(--orange-deep)}
+.regctl .state{color:var(--green)}
+input[type=range]{width:100%;height:24px;accent-color:var(--orange);cursor:ew-resize;margin:0}
+.regctl .hint{margin:9px 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+
+/* the drawn plate */
+.plate{position:relative;transform:rotate(-.7deg);background:var(--stock);border:2.5px solid var(--ink);box-shadow:9px 9px 0 rgba(255,74,23,.4);padding:15px 15px 13px}
+.plate::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(35,32,28,.42) 1px,transparent 1.15px);
+  background-size:6px 6px;opacity:.42;
+}
+.plate .art{position:relative;z-index:1;width:100%;height:auto}
+.plate figcaption{
+  position:relative;z-index:1;margin-top:11px;padding-top:9px;border-top:1.5px solid var(--line);
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}
+.regt{position:absolute;z-index:2;width:24px;height:24px;color:var(--green);opacity:.9}
+.regt.tr{top:-12px;right:-12px}
+.regt.bl{bottom:-12px;left:-12px}
+
+/* ---------- full-width band: colour bar + ink key ---------- */
+.band{
+  margin-inline:calc(-1 * var(--pad));padding:24px var(--pad) 26px;
+  background:var(--band);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);
+}
+.colbar{display:flex;gap:6px;padding-bottom:26px}
+.colbar .sw{position:relative;flex:1;min-width:40px;height:34px;border:2px solid var(--ink)}
+.colbar .sw span{
+  position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);
+  font-family:var(--mono);font-size:9px;letter-spacing:.07em;color:var(--muted);white-space:nowrap;
+}
+.legend{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;margin-top:8px}
+.venn{position:relative;width:266px;height:152px;flex:none}
+.venn i{position:absolute;top:0;width:152px;height:152px;border-radius:50%;border:2.5px solid var(--ink);mix-blend-mode:multiply}
+.venn .o{left:0;background:var(--orange)}
+.venn .g{left:114px;background:var(--green)}
+.key{display:flex;flex-direction:column;gap:12px}
+.key li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.4}
+.key .swatch{flex:none;width:22px;height:22px;border:2px solid var(--ink);margin-top:2px}
+.key .swatch.o{background:var(--orange)}
+.key .swatch.g{background:var(--green)}
+.key .swatch.v{background:var(--over)}
+.key b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase}
+.key .o~b,.key .k1 b{color:var(--ink)}
+.key p{color:var(--muted);font-size:14.5px}
+
+/* ---------- running cost ticker ---------- */
+.ticker{
+  overflow:hidden;background:var(--orange);border-bottom:3px solid var(--ink);
+  margin-inline:calc(-1 * var(--pad));padding:9px 0;
+  font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink);white-space:nowrap;
+}
+.ticker .track{display:inline-block;animation:run 42s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.ticker .run{padding-right:0}
+.ticker .sep{padding:0 14px}
+@keyframes run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+
+/* ---------- sections ---------- */
+.sect{margin-top:52px;border-top:3px solid var(--ink);padding-top:26px;position:relative}
+.sect .no{
+  position:absolute;top:18px;right:0;font-family:var(--mono);font-size:11px;
+  letter-spacing:.2em;color:var(--muted);text-transform:uppercase;
+}
+.sect h2{
+  font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:clamp(30px,4.5vw,56px);line-height:.9;letter-spacing:-.025em;color:var(--orange);
+  --rm:.42;
+}
+.sect h2 .sub{display:block;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--green);margin-bottom:10px}
+
+/* ---------- the proof: two ink columns ---------- */
+.proof{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:26px}
+.inkcol{background:var(--stock);border:2.5px solid var(--ink);border-top-width:17px;padding:20px 20px 22px}
+.inkcol.win{border-top-color:var(--orange);box-shadow:8px 8px 0 rgba(255,74,23,.34)}
+.inkcol.cost{border-top-color:var(--green);box-shadow:8px 8px 0 rgba(23,121,78,.34)}
+.inkhead{
+  display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;
+  font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;
+}
+.inkhead i{flex:none;width:17px;height:17px;border:2px solid var(--ink)}
+.win .inkhead i{background:var(--orange)}
+.cost .inkhead i{background:var(--green)}
+.inklist li{
+  position:relative;border-top:1.5px solid var(--line);padding:14px 0 14px 30px;
+  font-size:16.5px;line-height:1.45;
+}
+.inklist li:first-child{border-top:0;padding-top:16px}
+.inklist li::before{content:"";position:absolute;left:0;top:19px;width:14px;height:14px;border:2px solid var(--ink)}
+.win .inklist li::before{background:var(--orange)}
+.cost .inklist li::before{background:var(--green)}
+.inklist b{font-weight:800}
+.proofnote{
+  margin-top:20px;font-family:var(--mono);font-size:12px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted);
+}
+.proofnote b{color:var(--green)}
+
+/* ---------- plates / projects ---------- */
+.plates{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:26px}
+.sheet{
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--stock);
+  border:2.5px solid var(--ink);box-shadow:8px 8px 0 rgba(255,74,23,.33);
+  transition:transform .16s,box-shadow .16s;
+}
+.sheet:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 rgba(255,74,23,.42)}
+.thumb{position:relative;height:124px;background:#f7e2d2;border-bottom:2.5px solid var(--ink);overflow:hidden}
+.thumb.t2{background:#dcecdf}.thumb.t3{background:#f4e8c8}.thumb.t4{background:#e7e3d5}
+.thumb::after{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--ink) 1.2px,transparent 1.3px);background-size:5px 5px;opacity:.4}
+.thumb .ico{position:absolute;inset:0;margin:auto;width:84px;height:60px;z-index:1}
+.plabel{
+  position:absolute;left:7px;bottom:7px;z-index:2;font-family:var(--mono);font-size:9px;
+  letter-spacing:.13em;text-transform:uppercase;background:rgba(251,247,238,.9);
+  border:1.5px solid var(--ink);padding:1.5px 6px;
+}
+.sheet .body{display:flex;flex-direction:column;flex:1;padding:16px 16px 17px}
+.sheet h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:21px;line-height:1;letter-spacing:-.01em;margin-bottom:9px}
+.sheet p{font-size:14.5px;color:var(--muted);margin-bottom:15px}
+.sheet .cost{
+  margin-top:auto;padding-top:11px;border-top:2px dashed rgba(35,32,28,.32);
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;
+}
+.sheet .cost b{color:var(--green);font-weight:700}
+
+/* ---------- misprints ---------- */
+.misprint{position:relative;margin-top:30px;background:var(--stock);border:2.5px solid var(--ink);box-shadow:9px 9px 0 rgba(23,121,78,.36);padding:26px 24px 24px}
+.stamp{
+  position:absolute;top:-17px;right:16px;transform:rotate(6deg);
+  border:3px double var(--orange);background:rgba(255,74,23,.1);color:var(--green);
+  font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  padding:8px 13px;
+}
+.mislist li{position:relative;border-top:1.5px dashed var(--line);padding:14px 0 14px 38px;font-size:16.5px;line-height:1.45}
+.mislist li:first-child{border-top:0;padding-top:6px}
+.mislist li::before{
+  content:"\00d7";position:absolute;left:2px;top:8px;color:var(--orange);
+  font-family:var(--display);font-size:30px;line-height:1;
+}
+
+/* ---------- numbers ---------- */
+.numbers{display:grid;grid-template-columns:repeat(4,1fr);margin-top:26px;background:var(--stock);border:2.5px solid var(--ink)}
+.num{padding:22px 20px 24px;border-right:2.5px solid var(--ink)}
+.num:last-child{border-right:0}
+.num b{
+  display:block;font-family:var(--display);font-weight:900;
+  font-size:clamp(36px,4.4vw,54px);line-height:.94;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;
+}
+.num.win b{color:var(--orange)}
+.num.cost b{color:var(--green)}
+.num span{
+  display:block;margin-top:9px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--muted);line-height:1.55;
+}
+
+/* ---------- original sheet + marginalia ---------- */
+.original{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;margin-top:26px;align-items:start}
+.sheetpad{
+  white-space:pre-wrap;border:2.5px solid var(--ink);background:var(--stock);
+  background-image:repeating-linear-gradient(var(--stock),var(--stock) 28px,rgba(23,121,78,.24) 29px);
+  padding:22px 24px 26px;font-family:var(--hand);font-size:21px;line-height:29px;
+  transform:rotate(-.7deg);box-shadow:8px 8px 0 rgba(255,74,23,.36);
+}
+.margin{position:relative;padding-top:6px}
+.hand{
+  display:inline-block;font-family:var(--hand);font-size:21px;line-height:1.4;
+  border-left:5px solid var(--green);padding:2px 0 2px 16px;transform:rotate(-1.3deg);
+}
+.hand .sig{display:block;margin-top:10px;font-size:15px;color:var(--muted)}
+.arrow{width:100%;max-width:270px;height:124px;margin-top:14px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;text-decoration:none;background:var(--orange);color:var(--ink);
+  border:2.5px solid var(--ink);box-shadow:5px 5px 0 var(--green);
+  font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+  padding:13px 19px;transition:transform .13s,box-shadow .13s;
+}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--green)}
+.btn.ghost{background:var(--stock);box-shadow:5px 5px 0 rgba(35,32,28,.3)}
+.btn.ghost:hover{box-shadow:3px 3px 0 rgba(35,32,28,.3)}
+.cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px}
+
+/* ---------- colophon ---------- */
+.colophon{
+  margin-top:54px;border-top:3px solid var(--ink);padding-top:20px;
+  display:grid;grid-template-columns:1.3fr 1fr auto;gap:22px;align-items:start;
+  font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);
+}
+.colophon b{display:block;color:var(--ink);letter-spacing:.16em;margin-bottom:7px}
+.colophon p{line-height:1.7;text-transform:none;letter-spacing:.02em}
+.colophon .mark{display:flex;gap:5px}
+.colophon .mark i{width:20px;height:20px;border:1.5px solid var(--ink)}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  .cover{grid-template-columns:1fr;padding-top:40px}
+  .plates{grid-template-columns:repeat(2,1fr)}
+  .legend{grid-template-columns:1fr;gap:22px}
+  .numbers{grid-template-columns:repeat(2,1fr)}
+  .num:nth-child(2n){border-right:0}
+  .num:nth-child(-n+2){border-bottom:2.5px solid var(--ink)}
+  .colophon{grid-template-columns:1fr 1fr}
+}
+@media(max-width:800px){
+  .proof{grid-template-columns:1fr}
+  .original{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .plates{grid-template-columns:1fr}
+  .numbers{grid-template-columns:1fr}
+  .num{border-right:0;border-bottom:2.5px solid var(--ink)}
+  .num:last-child{border-bottom:0}
+  .cover-title{font-size:clamp(50px,15vw,74px)}
+  .stamp{position:static;display:inline-block;transform:rotate(-3deg);margin-bottom:12px}
+  .misprint{padding-top:22px}
+  .sheetpad{font-size:19px}
+  .colophon{grid-template-columns:1fr}
+  .colbar .sw span{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <span class="brand">The Independent Home</span>
+    <span class="job">Job 009 · 2 spot inks · uncoated 120gsm · <b>no retouching</b></span>
+  </header>
+  <nav class="nav" aria-label="Mockup directions">
+    <a class="home" href="index.html">All directions</a>
+    <a href="field-journal.html">Field journal</a>
+    <a href="ledger.html">Ledger</a>
+    <a href="homestead.html">Homestead</a>
+    <a href="terminal.html">Terminal</a>
+    <a href="ephemera.html">Ephemera</a>
+    <a href="blueprint.html">Blueprint</a>
+    <a href="workshop.html">Workshop</a>
+    <a href="almanac.html">Almanac</a>
+    <a href="proof.html" aria-current="page">Proof</a>
+  </nav>
+
+  <!-- ============ COVER ============ -->
+  <section class="cover">
+    <span class="crop tl"></span><span class="crop tr"></span>
+    <span class="crop bl"></span><span class="crop br"></span>
+
+    <div>
+      <p class="eyebrow">Version 9 / two-colour riso zine</p>
+      <h1 class="cover-title" data-text="Proof&#10;Sheets">Proof
+Sheets</h1>
+      <p class="lede">Every project printed twice — once in <b class="w">orange, for what went right</b>, and once in <b class="c">green, for what it cost</b>. Same size, same paper, same press run. The mistakes are not a footnote, they are a plate.</p>
+
+      <div class="regctl">
+        <label for="reg"><span>Plate registration</span><span><output id="regout">0.33 mm</output> · <span class="state" id="regstate">off register</span></span></label>
+        <input type="range" id="reg" min="0" max="18" step="1" value="11">
+        <p class="hint">Slide to pull the two plates into register.</p>
+      </div>
+
+      <div class="cta">
+        <a class="btn" href="#">Read the latest run</a>
+        <a class="btn ghost" href="#">See the cost breakdown</a>
+      </div>
+    </div>
+
+    <figure class="plate">
+      <svg class="regt tr" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 0v24M0 12h24" stroke="currentColor" stroke-width="1.5"/></svg>
+      <svg class="regt bl" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 0v24M0 12h24" stroke="currentColor" stroke-width="1.5"/></svg>
+      <svg class="art" viewBox="0 0 320 212" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" role="img" aria-label="Hand-drawn sketch of the property: solar array, house, garden beds, workshop and sun">
+        <g stroke="#17794e" stroke-width="3">
+          <path d="M24 138 L86 116 L92 148 L30 170 Z"/>
+          <path d="M37 133 L43 163" stroke-width="2"/>
+          <path d="M20 152 L89 132" stroke-width="2"/>
+          <path d="M92 148 L92 176" stroke-width="2.6"/>
+          <path d="M60 160 L60 176" stroke-width="2.6"/>
+          <path d="M112 176 V104 L182 58 L252 104 V176 Z"/>
+          <path d="M104 106 L182 54 L260 106" stroke-width="3.4"/>
+          <path d="M152 176 V138 h30 v38"/>
+          <path d="M198 122 h34 v26 h-34 Z" stroke-width="2.6"/>
+          <path d="M215 122 v26 M198 135 h34" stroke-width="2"/>
+          <path d="M272 176 V140 h34 v36" stroke-width="2.6"/>
+          <path d="M266 142 l23 -18 l23 18" stroke-width="2.6"/>
+          <path d="M100 176 v-14 M100 162 c-8 -2 -10 -9 -8 -13 c6 0 10 6 8 13 M100 164 c8 -3 10 -10 8 -14 c-6 1 -9 7 -8 14" stroke-width="2.4"/>
+          <path d="M114 176 v-11 M114 165 c-7 -2 -8 -7 -7 -11 c5 0 8 5 7 11" stroke-width="2.4"/>
+          <path d="M8 176 H312" stroke-width="3"/>
+        </g>
+        <g stroke="#ff4a17" stroke-width="3">
+          <circle cx="276" cy="46" r="15"/>
+          <path d="M276 21 v-9 M276 80 v-9 M251 46 h-9 M310 46 h-9 M258 28 l-6 -6 M300 70 l-6 -6 M294 28 l6 -6 M252 70 l6 -6"/>
+          <path d="M30 146 L52 138" stroke-width="2.4" stroke-dasharray="6 5"/>
+        </g>
+        <g stroke="#23201c" stroke-width="2">
+          <path d="M40 130 L40 118 M40 118 h44" stroke-dasharray="5 4"/>
+          <path d="M84 118 l-7 -4 M84 118 l-7 4"/>
+        </g>
+        <text x="44" y="113" font-family="ui-monospace,Menlo,monospace" font-size="11.5" fill="#23201c" letter-spacing="1">18 PANELS</text>
+        <text x="192" y="198" font-family="ui-monospace,Menlo,monospace" font-size="11.5" fill="#23201c" letter-spacing="1">8.9 MWh / YR</text>
+        <text x="16" y="198" font-family="ui-monospace,Menlo,monospace" font-size="11.5" fill="#17794e" letter-spacing="1">6 BEDS</text>
+      </svg>
+      <figcaption>Plate 1 — the property, drawn on site, two passes, no retouching</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ COLOUR BAR + INK KEY ============ -->
+  <section class="band" aria-label="Ink key">
+    <div class="colbar" aria-hidden="true">
+      <span class="sw" style="background:var(--paper)"><span>paper</span></span>
+      <span class="sw" style="background:var(--orange)"><span>orange</span></span>
+      <span class="sw" style="background:rgba(255,74,23,.5)"><span>o 50%</span></span>
+      <span class="sw" style="background:var(--over)"><span>overprint</span></span>
+      <span class="sw" style="background:var(--green)"><span>green</span></span>
+      <span class="sw" style="background:rgba(23,121,78,.5)"><span>g 50%</span></span>
+      <span class="sw" style="background:var(--ink)"><span>black</span></span>
+    </div>
+    <div class="legend">
+      <div class="venn" aria-hidden="true"><i class="o"></i><i class="g"></i></div>
+      <ul class="key">
+        <li><span class="swatch o"></span><div><b>Orange — what went right</b><p>Production, savings, the parts that worked first time.</p></div></li>
+        <li><span class="swatch g"></span><div><b>Green — what it cost</b><p>Cash out of pocket, weekends lost, the jobs redone free.</p></div></li>
+        <li><span class="swatch v"></span><div><b>Overprint — the whole story</b><p>Where the two plates cross. This is the only place the truth gets dark.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ COST TICKER ============ -->
+  <div class="ticker" aria-label="Running list of costs">
+    <span class="track">
+      <span class="run">$2,940 net after the credit<span class="sep">◆</span>3 free redos<span class="sep">◆</span>$210 of dirt I did not need<span class="sep">◆</span>2 weekends at the permit office<span class="sep">◆</span>$61 of passive income in 4 months<span class="sep">◆</span>24 ft of cedar for a 19 ft job<span class="sep">◆</span>1 wrong-size disconnect<span class="sep">◆</span></span><span class="run" aria-hidden="true">$2,940 net after the credit<span class="sep">◆</span>3 free redos<span class="sep">◆</span>$210 of dirt I did not need<span class="sep">◆</span>2 weekends at the permit office<span class="sep">◆</span>$61 of passive income in 4 months<span class="sep">◆</span>24 ft of cedar for a 19 ft job<span class="sep">◆</span>1 wrong-size disconnect<span class="sep">◆</span></span>
+    </span>
+  </div>
+
+  <!-- ============ THE PROOF ============ -->
+  <section class="sect">
+    <span class="no">Sheet 01 / 04</span>
+    <h2><span class="sub">The proof</span><span class="hl" data-text="The same run,&#10;printed twice">The same run,
+printed twice</span></h2>
+    <div class="proof">
+      <div class="inkcol win">
+        <div class="inkhead"><i></i>Orange — what went right</div>
+        <ul class="inklist">
+          <li>Solar covered <b>71%</b> of house use by August, in its first full year.</li>
+          <li>Shop time doubled once the bench got a top flat enough to trust.</li>
+          <li>First side-income month cleared <b>$1,000</b> after parts.</li>
+          <li>Two of six garden beds paid for themselves in groceries.</li>
+        </ul>
+      </div>
+      <div class="inkcol cost">
+        <div class="inkhead"><i></i>Green — what it cost</div>
+        <ul class="inklist">
+          <li><b>$2,940</b> net out of pocket after the credit. Not free. Not close.</li>
+          <li>Two weekends lost to a permit office, one to a wrong-size disconnect.</li>
+          <li>Three jobs mispriced. The free redo taught more than the profit would have.</li>
+          <li>Six months of evenings. The calendar does not care that it was worth it.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="proofnote">Both columns set at the same weight, same measure. <b>Neither one is the footnote.</b></p>
+  </section>
+
+  <!-- ============ PLATES ============ -->
+  <section class="sect">
+    <span class="no">Sheet 02 / 04</span>
+    <h2><span class="sub">Plates 01–04</span><span class="hl" data-text="What is on the press">What is on the press</span></h2>
+    <div class="plates">
+      <a class="sheet" href="#">
+        <div class="thumb">
+          <svg class="ico" viewBox="0 0 96 64" fill="none" stroke="#17794e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+            <path d="M12 46 L48 30 L54 46 L18 62 Z"/><path d="M30 38 L36 54" stroke-width="2"/><path d="M54 46 V62" stroke-width="2.4"/><path d="M33 54 V62" stroke-width="2.4"/>
+            <g stroke="#ff4a17"><circle cx="76" cy="18" r="9"/><path d="M76 4 v-3 M76 36 v-3 M61 18 h-3 M94 18 h-3"/></g>
+          </svg>
+          <span class="plabel">plate 01</span>
+        </div>
+        <div class="body">
+          <h3>Solar, one year in</h3>
+          <p>8.9 MWh made, 71% of the house used, and one string I wired backwards on a Sunday.</p>
+          <div class="cost"><span>$1.41/W after credit</span><b>paid back honest</b></div>
+        </div>
+      </a>
+      <a class="sheet" href="#">
+        <div class="thumb t2">
+          <svg class="ico" viewBox="0 0 96 64" fill="none" stroke="#17794e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+            <path d="M8 42 H88" stroke-width="4"/><path d="M18 42 V60 M78 42 V60"/><path d="M24 42 V26 h34 v16" stroke-width="2.6"/>
+            <path d="M64 34 L82 18" stroke="#ff4a17" stroke-width="4"/><path d="M60 38 L68 30" stroke-width="2.6"/>
+          </svg>
+          <span class="plabel">plate 02</span>
+        </div>
+        <div class="body">
+          <h3>The $412 bench</h3>
+          <p>Three weekends, one ruined planer blade, and a top flat enough to level a door on.</p>
+          <div class="cost"><span>3 weekends</span><b>1 blade</b></div>
+        </div>
+      </a>
+      <a class="sheet" href="#">
+        <div class="thumb t3">
+          <svg class="ico" viewBox="0 0 96 64" fill="none" stroke="#17794e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+            <path d="M6 54 H90" stroke-width="3.4"/><path d="M48 54 V24"/>
+            <path d="M48 40 c-13 0 -18 -8 -16 -15 c9 -1 16 7 16 15 M48 36 c13 -1 17 -9 15 -16 c-9 0 -15 8 -15 16"/>
+            <path d="M20 54 v-8 M74 54 v-8" stroke="#ff4a17" stroke-width="2.6"/>
+          </svg>
+          <span class="plabel">plate 03</span>
+        </div>
+        <div class="body">
+          <h3>Six beds, one mistake</h3>
+          <p>Cedar offcuts, back-breaking soil, and <strong>$210 of dirt I did not need.</strong></p>
+          <div class="cost"><span>$680 total</span><b>$210 wasted</b></div>
+        </div>
+      </a>
+      <a class="sheet" href="#">
+        <div class="thumb t4">
+          <svg class="ico" viewBox="0 0 96 64" fill="none" stroke="#17794e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+            <ellipse cx="30" cy="50" rx="20" ry="7"/><ellipse cx="30" cy="38" rx="20" ry="7"/><ellipse cx="30" cy="26" rx="20" ry="7"/>
+            <path d="M60 20 h28 v20 h-28 Z" stroke="#ff4a17" stroke-width="2.8"/><path d="M66 30 h16" stroke="#ff4a17" stroke-width="2.4"/>
+          </svg>
+          <span class="plabel">plate 04</span>
+        </div>
+        <div class="body">
+          <h3>Repairs, net not gross</h3>
+          <p>Fourteen jobs. Gross looked good. Net after parts, tires and one free redo, less so.</p>
+          <div class="cost"><span>$1,905 net</span><b>3 redos</b></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ MISPRINTS ============ -->
+  <section class="sect">
+    <span class="no">Sheet 03 / 04</span>
+    <h2><span class="sub">Misprints</span><span class="hl" data-text="What went wrong,&#10;kept in">What went wrong,
+kept in</span></h2>
+    <div class="misprint">
+      <span class="stamp">Run 03 — kept in</span>
+      <ul class="mislist">
+        <li>Ordered 24 ft of cedar for a 19 ft job. Sold the rest at cost instead of calling it an investment.</li>
+        <li>Chased a “passive” side project for four months. It earned $61 and a rate card.</li>
+        <li>Wrote a nine-step checklist nobody read. The post people wanted was the receipt breakdown.</li>
+        <li>Mispriced three repair jobs. The free redo cost a Saturday and fixed my pricing for good.</li>
+      </ul>
+    </div>
+
+    <div class="numbers">
+      <div class="num win"><b>71%</b><span>of house use covered by solar, August</span></div>
+      <div class="num cost"><b>$1.41</b><span>per watt installed, all-in, after the credit</span></div>
+      <div class="num cost"><b>3</b><span>free redos — the real price of mispriced work</span></div>
+      <div class="num win"><b>$1,905</b><span>net side income, parts already deducted</span></div>
+    </div>
+  </section>
+
+  <!-- ============ ORIGINAL SHEET ============ -->
+  <section class="sect">
+    <span class="no">Sheet 04 / 04</span>
+    <h2><span class="sub">From the original sheet</span><span class="hl" data-text="The line this&#10;whole run is built on">The line this
+whole run is built on</span></h2>
+    <div class="original">
+      <div class="sheetpad">I'm not a prepper. I just want more control.
+
+If the house can make power, grow food, and cost less to run, maybe work gets a little less powerful over my life.</div>
+      <div class="margin">
+        <span class="hand">Print every project twice — the win and the cost, at the same size.<span class="sig">— R., at the kitchen table</span></span>
+        <svg class="arrow" viewBox="0 0 270 124" fill="none" stroke="#ff4a17" stroke-width="3.5" stroke-linecap="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M240 20 C176 38 106 64 38 100"/>
+          <path d="M64 106 L38 100 L52 78"/>
+        </svg>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#">Start with the receipt breakdown</a>
+      <a class="btn ghost" href="#">Get the next run by email</a>
+    </div>
+  </section>
+
+  <!-- ============ COLOPHON ============ -->
+  <footer class="colophon">
+    <div>
+      <b>Mockup: Proof Sheets</b>
+      <p>Two-colour risograph field zine. Orange for the win, green for the cost, misprints kept at full size.</p>
+    </div>
+    <div>
+      <b>Print spec</b>
+      <p>Job 009 · 2 spot inks · uncoated 120gsm · hand-drawn plates · trim on the marks.</p>
+    </div>
+    <div class="mark" aria-hidden="true">
+      <i style="background:var(--paper)"></i><i style="background:var(--orange)"></i><i style="background:var(--over)"></i><i style="background:var(--green)"></i><i style="background:var(--ink)"></i>
+    </div>
+  </footer>
+
+</div>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <filter id="wobble" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.021" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<script>
+(function(){
+  var r=document.getElementById('reg'),
+      out=document.getElementById('regout'),
+      st=document.getElementById('regstate'),
+      root=document.documentElement;
+  function set(){
+    var v=+r.value;
+    root.style.setProperty('--rx',v+'px');
+    root.style.setProperty('--ry',(v*0.68)+'px');
+    out.textContent=(v*0.03).toFixed(2)+' mm';
+    st.textContent = v<2 ? 'in register' : (v>14 ? 'wildly off' : 'off register');
+  }
+  r.addEventListener('input',set);
+  set();
+})();
+</script>
+</body>
+</html>

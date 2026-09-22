@@ -4,19 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>The Independent Home mockups</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+
+:root{--paper:#f6eedf;--ink:#20251f;--muted:#686258;--green:#41583b;--rust:#9a4f2f;--gold:#d8ad61;--line:rgba(32,37,31,.18);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--serif:Georgia,serif;--sans:system-ui,-apple-system,Segoe UI,sans-serif}*{box-sizing:border-box}body{margin:0;background:linear-gradient(rgba(32,37,31,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(32,37,31,.025) 1px,transparent 1px),var(--paper);background-size:32px 32px;color:var(--ink);font-family:var(--sans);line-height:1.55}a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:16px;font-family:var(--mono);font-size:13px;text-transform:uppercase}.nav{display:flex;gap:12px;flex-wrap:wrap}.nav a{text-decoration:none;border-bottom:1px dashed var(--muted)}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;padding:38px 0}.kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--rust);font-size:13px}.title{font-family:var(--serif);font-size:clamp(44px,7vw,86px);line-height:.9;letter-spacing:-.055em;margin:10px 0 18px}.lede{font-size:clamp(19px,2.2vw,27px);font-family:var(--serif);line-height:1.2;max-width:760px}.card,.panel{background:#fff8ea;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(32,37,31,.14);border-radius:18px;padding:20px}.mono{font-family:var(--mono);white-space:pre-wrap;font-size:14px;line-height:1.72}.scan{min-height:260px;background:repeating-linear-gradient(#fff8ea,#fff8ea 28px,rgba(65,88,59,.18) 29px);border:1px dashed var(--muted);padding:24px;font-family:"Comic Sans MS","Bradley Hand",cursive;font-size:22px;transform:rotate(-.6deg)}.note{color:var(--rust);background:rgba(154,79,47,.08);padding:1px 4px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.post{min-height:230px;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between}.post h3{font-family:var(--serif);font-size:25px;line-height:1;margin:0 0 10px}.post p{color:var(--muted);font-size:14px}.meta{font-family:var(--mono);font-size:11px;color:var(--rust);text-transform:uppercase;border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}.card{display:flex;flex-direction:column}.card>h2,.card>h3,.card>p{margin-top:0;margin-bottom:12px}.card>p:last-child{margin-bottom:0}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat b{display:block;font-family:var(--mono);font-size:34px;color:var(--green);line-height:1}.stat span{font-size:13px;color:var(--muted)}.section{border-top:2px solid var(--ink);padding-top:24px;margin-top:26px}.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 16px;border:2px solid var(--ink);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:13px}.btn.alt{background:transparent;color:var(--ink)}footer{border-top:2px solid var(--ink);margin-top:36px;padding-top:18px;color:var(--muted);font-family:var(--mono);font-size:12px}.judge{background:#edf4e6;border-left:8px solid var(--green)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:580px){.wrap{padding:14px}.top{align-items:flex-start;flex-direction:column}.grid,.statgrid{grid-template-columns:1fr}.title{font-size:46px}}
+
+</style>
 </head>
 <body>
   <div class="wrap">
     <header class="top">
       <strong>The Independent Home mockups</strong>
-      <nav class="nav" aria-label="Mockup directions"><a href="field-journal.html">Field journal</a><a href="ledger.html">Ledger</a><a href="homestead.html">Homestead</a><a href="terminal.html">Terminal</a><a href="ephemera.html">Ephemera</a><a href="blueprint.html">Blueprint</a><a href="workshop.html">Workshop</a></nav>
+      <nav class="nav" aria-label="Mockup directions"><a href="field-journal.html">Field journal</a><a href="ledger.html">Ledger</a><a href="homestead.html">Homestead</a><a href="terminal.html">Terminal</a><a href="ephemera.html">Ephemera</a><a href="blueprint.html">Blueprint</a><a href="workshop.html">Workshop</a><a href="almanac.html">Almanac</a><a href="proof.html">Proof</a></nav>
     </header>
 
     <main>
       <section class="hero">
         <div>
-          <div class="kicker">Seven directions</div>
+          <div class="kicker">Nine directions</div>
           <h1 class="title">Handwritten-first site concepts.</h1>
           <p class="lede">Built around the idea that every post starts on paper, the full original scan stays available, and AI only transcribes, structures, and publishes.</p>
         </div>
@@ -43,6 +48,16 @@
           <a class="card post" href="ephemera.html"><div><h3>5. Ephemera Board</h3><p>Kitchen-table clippings, receipts, hand notes, and proof scraps. Makes the raw source material feel collectible and trustworthy.</p></div><div class="meta">best authenticity texture</div></a>
           <a class="card post" href="blueprint.html"><div><h3>6. Home Systems Blueprint</h3><p>Technical-manual view of power, water, food, money, and privacy as house systems you can inspect and improve.</p></div><div class="meta">best systems map</div></a>
           <a class="card post" href="workshop.html"><div><h3>7. Workshop Manual</h3><p>Course and lead-magnet direction: practical modules, checklists, and starter paths without hype or guru energy.</p></div><div class="meta">best product funnel</div></a>
+          <a class="card post" href="almanac.html"><div><h3>8. Home Almanac</h3><p>Seasonal filing by power, food, water, money, and privacy. Reader enters through the year, not the feed.</p></div><div class="meta">best timely structure</div></a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="kicker">Ninth direction / my entry</div>
+        <div class="card" style="border-left:8px solid #ff4a17">
+          <h2>9. Proof Sheets</h2>
+          <p>Two-colour risograph field zine. Orange prints what went right, green prints what it cost, so the mistakes and the real numbers get the same press run as the wins. Drag the registration control to pull the two ink plates together.</p>
+          <p><a class="btn" href="proof.html">Open Proof Sheets</a></p>
         </div>
       </section>
 
@@ -54,7 +69,9 @@
             <div><h3>Ephemera</h3><p>Does “source material everywhere” make the site feel more human, or too messy?</p></div>
             <div><h3>Blueprint</h3><p>Does a systems diagram better communicate practical independence across energy, food, water, money, and privacy?</p></div>
             <div><h3>Workshop</h3><p>Can the same brand sell courses, checklists, and email capture while preserving the paper-first trust promise?</p></div>
-            <div><h3>Likely hybrid</h3><p>Field Journal homepage + Ledger recurring reports + Workshop lead magnets + occasional Blueprint explainers.</p></div>
+            <div><h3>Almanac</h3><p>Does seasonal filing make independence feel calmer and more actionable than an endless post feed?</p></div>
+            <div style="grid-column:1/-1;border-top:1px dashed var(--line);padding-top:16px"><h3>Proof Sheets</h3><p>Does printing the cost and the mistake in the same ink as the win make the honesty land harder — or does two-colour riso fight the calm the brand needs?</p></div>
+            <div style="grid-column:1/-1;border-top:1px dashed var(--line);padding-top:16px"><h3>Likely hybrid</h3><p>Field Journal homepage + Ledger recurring reports + Workshop lead magnets + occasional Blueprint explainers.</p></div>
           </div>
         </div>
       </section>
