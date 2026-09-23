@@ -77,7 +77,7 @@ corporate stock-art styling.
 - Directions **1–7** predate this record. Git shows only author `Ubuntu` and no model metadata, so their model is **not recorded** — don't guess:
   - 1–4 — commit `d3fd932`, 2026-05-20, "Add Independent Home mockups"
   - 5–7 — commit `092cfc1`, 2026-06-11, "Add more Independent Home mockup directions"
-- Directions 8–10 were published to `main` on 2026-09-22. Direction 11 is on branch `add-direction-pegboard-20260922`.
+- Directions 8–11 are published to `main` (8–10 on 2026-09-22, 11 on 2026-09-23).
 - If you know which model built 1–7, record it here so future work can go back to it.
 
 Recommendation: use Field Journal as the base, then borrow Ledger stat cards,
