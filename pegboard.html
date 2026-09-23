@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Pegboard - every project as a tool on the shop wall, tagged with what it does and what it cost. Empty hooks stay on the board.">
+<title>Pegboard - The Independent Home mockup</title>
+<style>
+:root{--paper:#f6eedf;--ink:#20251f;--muted:#686258;--green:#41583b;--rust:#9a4f2f;--gold:#d8ad61;--line:rgba(32,37,31,.18);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--serif:Georgia,serif;--sans:system-ui,-apple-system,Segoe UI,sans-serif}*{box-sizing:border-box}body{margin:0;background:linear-gradient(rgba(32,37,31,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(32,37,31,.025) 1px,transparent 1px),var(--paper);background-size:32px 32px;color:var(--ink);font-family:var(--sans);line-height:1.55}a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:16px;font-family:var(--mono);font-size:13px;text-transform:uppercase}.nav{display:flex;gap:12px;flex-wrap:wrap}.nav a{text-decoration:none;border-bottom:1px dashed var(--muted)}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;padding:38px 0}.kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--rust);font-size:13px}.title{font-family:var(--serif);font-size:clamp(44px,7vw,86px);line-height:.9;letter-spacing:-.055em;margin:10px 0 18px}.lede{font-size:clamp(19px,2.2vw,27px);font-family:var(--serif);line-height:1.2;max-width:760px}.card,.panel{background:#fff8ea;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(32,37,31,.14);border-radius:18px;padding:20px}.mono{font-family:var(--mono);white-space:pre-wrap;font-size:14px;line-height:1.72}.scan{min-height:260px;background:repeating-linear-gradient(#fff8ea,#fff8ea 28px,rgba(65,88,59,.18) 29px);border:1px dashed var(--muted);padding:24px;font-family:"Comic Sans MS","Bradley Hand",cursive;font-size:22px;transform:rotate(-.6deg)}.note{color:var(--rust);background:rgba(154,79,47,.08);padding:1px 4px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.post{min-height:230px;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between}.post h3{font-family:var(--serif);font-size:25px;line-height:1;margin:0 0 10px}.post p{color:var(--muted);font-size:14px}.meta{font-family:var(--mono);font-size:11px;color:var(--rust);text-transform:uppercase;border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}.card{display:flex;flex-direction:column}.card>h2,.card>h3,.card>p{margin-top:0;margin-bottom:12px}.card>p:last-child{margin-bottom:0}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat b{display:block;font-family:var(--mono);font-size:34px;color:var(--green);line-height:1}.stat span{font-size:13px;color:var(--muted)}.section{border-top:2px solid var(--ink);padding-top:24px;margin-top:26px}.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 16px;border:2px solid var(--ink);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:13px}.btn.alt{background:transparent;color:var(--ink)}footer{border-top:2px solid var(--ink);margin-top:36px;padding-top:18px;color:var(--muted);font-family:var(--mono);font-size:12px}.judge{background:#edf4e6;border-left:8px solid var(--green)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:580px){.wrap{padding:14px}.top{align-items:flex-start;flex-direction:column}.grid,.statgrid{grid-template-columns:1fr}.title{font-size:46px}}
+</style>
+<style>
+/* ============================================================
+   PEGBOARD - the shop wall.
+   Every project is a tool hung on the board with a kraft tag:
+   what it does, what it cost, and how many times it has been
+   rehung. The empty hooks stay on the board.
+   ============================================================ */
+:root{
+  --board:#d6c39f;
+  --board-dark:#b9a67e;
+  --tag:#f2e6c9;
+  --ink:#2a241c;
+  --muted:#6f6455;
+  --red:#b5432f;
+  --olive:#6f7a4a;
+  --steel:#4d6b7a;
+  --ochre:#c2872c;
+  --line:rgba(42,36,24,.24);
+  --display:"Arial Narrow","Helvetica Neue Condensed",Impact,"Arial Black",sans-serif;
+  --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --hand:"Segoe Print","Bradley Hand","Chalkboard SE","Marker Felt","Comic Sans MS","Liberation Serif",cursive;
+}
+body{
+  background-color:var(--board);
+  background-image:
+    radial-gradient(circle 4px at 50% 50%, rgba(42,36,24,.38) 98%, transparent 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23w)' opacity='.22'/%3E%3C/svg%3E");
+  background-size:32px 32px, 180px 180px;
+  background-blend-mode:normal, multiply;
+  color:var(--ink);
+  font-family:var(--sans);
+}
+
+/* ---------- masthead ---------- */
+.top{border-bottom:2px solid var(--ink);font-family:var(--mono);font-size:12.5px;letter-spacing:.05em}
+.top .brand{font-weight:700;text-transform:uppercase;letter-spacing:.18em}
+.nav a{text-decoration:none;border-bottom:1px dashed var(--muted);text-transform:uppercase;font-size:11.5px;letter-spacing:.06em}
+.nav a:hover{color:var(--red);border-bottom-color:var(--red)}
+.nav a[aria-current="page"]{color:var(--red);border-bottom-style:solid;font-weight:700}
+.nav a.home{color:var(--muted);border-bottom-color:transparent}
+
+/* ---------- hero ---------- */
+.hero{padding:34px 0 8px}
+.kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;color:var(--red);font-size:11.5px}
+.title{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(42px,7vw,84px);line-height:.9;letter-spacing:-.01em;margin:12px 0 16px;
+}
+.title .l2{color:var(--red)}
+.lede{font-size:clamp(17px,1.9vw,21.5px);line-height:1.4;max-width:600px;font-family:var(--sans)}
+.lede b{background:rgba(181,67,47,.14);padding:0 3px}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{
+  border-radius:2px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+  background:var(--red);border-color:var(--ink);color:var(--tag);
+  box-shadow:4px 4px 0 rgba(42,36,24,.85);transition:transform .14s,box-shadow .14s;
+}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 rgba(42,36,24,.85)}
+.btn.alt{background:var(--tag);color:var(--ink)}
+
+/* ---------- the board (hero panel) ---------- */
+.board{
+  position:relative;background:var(--board);border:2px solid var(--ink);
+  box-shadow:8px 8px 0 rgba(42,36,24,.2);
+  background-image:radial-gradient(circle 4px at 50% 50%, rgba(42,36,24,.42) 98%, transparent 100%);
+  background-size:32px 32px;
+  padding:26px 18px 20px;min-height:330px;
+}
+.pegrow{display:flex;justify-content:space-around;align-items:flex-start;gap:6px}
+.hang{width:25%;text-align:center}
+.hang svg{width:100%;height:auto;max-height:132px}
+.sign{
+  position:absolute;right:-6px;bottom:-14px;background:var(--tag);border:2px solid var(--ink);
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  padding:7px 11px;transform:rotate(-2.4deg);box-shadow:4px 4px 0 rgba(42,36,24,.25);max-width:230px;line-height:1.5;
+}
+.sign b{color:var(--red)}
+
+/* ---------- kraft tags ---------- */
+.section{border-top:2px solid var(--ink);padding-top:22px;margin-top:32px}
+.sect-kicker{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--red);margin-bottom:8px}
+.section h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3vw,36px);line-height:.95;margin:0 0 6px}
+.section .sub{font-size:15.5px;color:var(--muted);max-width:640px;margin-bottom:4px}
+
+.benchline{
+  display:inline-block;margin-top:16px;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;
+  letter-spacing:.1em;border:2px solid var(--ink);background:var(--tag);padding:8px 12px;
+  box-shadow:4px 4px 0 rgba(42,36,24,.2);
+}
+.benchline b{color:var(--red)}
+
+.grid.taggrid{grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+.tag{
+  position:relative;background:var(--tag);border:2px solid var(--ink);border-radius:0;
+  box-shadow:6px 6px 0 rgba(42,36,24,.22);text-decoration:none;color:inherit;
+  padding:40px 16px 16px;min-height:0;display:flex;flex-direction:column;
+  transition:transform .16s,box-shadow .16s;
+}
+.tag:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(42,36,24,.26)}
+.tag .hole{
+  position:absolute;top:12px;left:50%;margin-left:-8px;width:16px;height:16px;border-radius:50%;
+  background:var(--board);border:2px solid var(--ink);box-shadow:inset 0 2px 3px rgba(42,36,24,.45);
+}
+.tag .loop{position:absolute;top:6px;left:50%;margin-left:-26px;width:52px;height:34px;color:var(--board-dark)}
+.tag .art{display:block;width:100%;max-width:150px;height:74px;margin:0 auto 12px;color:var(--ink);transition:transform .2s}
+.tag h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:19px;line-height:1.05;letter-spacing:.01em;margin:0 0 7px}
+.tag p{font-size:13.5px;color:var(--muted);margin:0 0 12px}
+.tag .cost{
+  margin-top:auto;border-top:1px dashed var(--line);padding-top:10px;
+  font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;
+  display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;
+}
+.tag .cost b{color:var(--red)}
+.tag.out{opacity:.66}
+.tag.out .art{transform:rotate(-8deg) translateY(3px)}
+.tag.out::after{
+  content:"On the bench";position:absolute;top:14px;right:8px;transform:rotate(6deg);
+  border:2px solid var(--red);color:var(--red);background:rgba(242,230,201,.9);
+  font-family:var(--mono);font-weight:700;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:4px 6px;
+}
+
+/* ---------- empty hooks (mistakes) ---------- */
+.vacant{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
+.vac{
+  position:relative;background:rgba(242,230,201,.35);border:2px dashed var(--red);
+  padding:34px 15px 16px;text-align:center;
+}
+.vac .hole{
+  position:absolute;top:11px;left:50%;margin-left:-8px;width:16px;height:16px;border-radius:50%;
+  background:var(--board);border:2px dashed var(--red);
+}
+.vac .art{width:100%;max-width:120px;height:60px;margin:0 auto 10px;color:rgba(42,36,24,.34);opacity:.7}
+.vac h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:15px;margin:0 0 6px;color:var(--red)}
+.vac p{font-size:13px;color:var(--muted);margin:0;text-align:left}
+
+/* ---------- bench tally ---------- */
+.tally{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--ink);background:var(--tag);margin-top:22px}
+.tally .t{padding:18px 16px 20px;border-right:2px solid var(--ink)}
+.tally .t:last-child{border-right:0}
+.tally b{display:block;font-family:var(--display);font-weight:700;font-size:38px;line-height:1;letter-spacing:-.01em}
+.tally span{display:block;margin-top:8px;font-family:var(--mono);font-size:10px;line-height:1.5;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.tally .win b{color:var(--olive)}
+.tally .cost b{color:var(--red)}
+
+/* ---------- next on the bench ---------- */
+.next{list-style:none;padding:0;margin:20px 0 0;border:2px solid var(--ink);background:var(--tag)}
+.next li{display:flex;gap:14px;align-items:flex-start;padding:15px 16px;border-bottom:1px dashed var(--line)}
+.next li:last-child{border-bottom:0}
+.next .box{flex:none;width:18px;height:18px;border:2px solid var(--ink);margin-top:2px;position:relative}
+.next .box::after{content:"";position:absolute;inset:3px;background:var(--red);opacity:0}
+.next li.done .box::after{opacity:1}
+.next h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:16px;margin:0 0 4px}
+.next p{font-size:13.5px;color:var(--muted);margin:0}
+.next .when{margin-left:auto;flex:none;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--ochre);white-space:nowrap}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);margin-top:36px;padding-top:16px;color:var(--muted);
+  font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+footer b{color:var(--ink);letter-spacing:.16em}
+footer .chips{display:flex;gap:5px}
+footer .chips i{width:16px;height:16px;border:1.5px solid var(--ink)}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .grid.taggrid{grid-template-columns:repeat(2,1fr)}
+  .vacant{grid-template-columns:repeat(2,1fr)}
+  .tally{grid-template-columns:repeat(2,1fr)}
+  .tally .t:nth-child(2n){border-right:0}
+  .tally .t:nth-child(-n+2){border-bottom:2px solid var(--ink)}
+}
+@media(max-width:580px){
+  .grid.taggrid{grid-template-columns:1fr}
+  .vacant{grid-template-columns:1fr}
+  .tally{grid-template-columns:1fr}
+  .tally .t{border-right:0;border-bottom:2px solid var(--ink)}
+  .tally .t:last-child{border-bottom:0}
+  .title{font-size:38px}
+  .board{padding:20px 12px 16px}
+  .sign{position:static;margin-top:18px;transform:rotate(-1.4deg);max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">The Independent Home &middot; Pegboard</div>
+    <nav class="nav" aria-label="Mockup directions">
+      <a class="home" href="index.html">All directions</a>
+      <a href="field-journal.html">Field journal</a>
+      <a href="ledger.html">Ledger</a>
+      <a href="homestead.html">Homestead</a>
+      <a href="terminal.html">Terminal</a>
+      <a href="ephemera.html">Ephemera</a>
+      <a href="blueprint.html">Blueprint</a>
+      <a href="workshop.html">Workshop</a>
+      <a href="almanac.html">Almanac</a>
+      <a href="proof.html">Proof</a>
+      <a href="dispatches.html">Dispatches</a>
+      <a href="pegboard.html" aria-current="page">Pegboard</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div>
+      <div class="kicker">Version 11 / the pegboard</div>
+      <h1 class="title">Everything<br><span class="l2">hangs here</span></h1>
+      <p class="lede">Every project is a tool on the wall: what it does, what it cost, and how many times I have had to rehang it. <b>The empty hooks stay on the board.</b></p>
+      <div class="btn-row">
+        <a class="btn" href="#board">Read the bench notes</a>
+        <a class="btn alt" href="#missing">See what&rsquo;s missing</a>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="pegrow">
+        <svg class="hang-art" viewBox="0 0 110 132" fill="none" stroke="#2a241c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" role="img" aria-label="Hand-drawn hammer hanging from a peg">
+          <circle cx="55" cy="9" r="4.5" fill="#b9a67e"/>
+          <path d="M55 14 v14" stroke="#b9a67e"/>
+          <path d="M50 124 L58 60" stroke-width="6"/>
+          <path d="M44 56 L86 34 L98 52 L60 70 Z" fill="#f2e6c9"/>
+        </svg>
+        <svg class="hang-art" viewBox="0 0 110 132" fill="none" stroke="#2a241c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" role="img" aria-label="Hand-drawn hand saw hanging from a peg">
+          <circle cx="55" cy="9" r="4.5" fill="#b9a67e"/>
+          <path d="M55 14 v22" stroke="#b9a67e"/>
+          <path d="M20 94 h26 v-18 h-26 z" fill="#f2e6c9"/>
+          <path d="M48 94 L98 56 L104 68 L54 106 Z" fill="#f2e6c9"/>
+          <path d="M54 106 l8 -6 l8 6 l8 -6 l8 6 l8 -6 l8 6"/>
+        </svg>
+        <svg class="hang-art" viewBox="0 0 110 132" fill="none" stroke="#2a241c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" role="img" aria-label="Hand-drawn drill hanging from a peg">
+          <circle cx="55" cy="9" r="4.5" fill="#b9a67e"/>
+          <path d="M55 14 v20" stroke="#b9a67e"/>
+          <path d="M28 48 h42 v30 h-42 z" fill="#f2e6c9"/>
+          <path d="M70 56 h12 v14 h-12 z" fill="#f2e6c9"/>
+          <path d="M82 63 h18"/>
+          <path d="M38 78 v24 h-16 v-24"/>
+          <path d="M56 78 v9"/>
+        </svg>
+        <svg class="hang-art" viewBox="0 0 110 132" fill="none" stroke="#2a241c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" role="img" aria-label="Hand-drawn garden fork hanging from a peg">
+          <circle cx="55" cy="9" r="4.5" fill="#b9a67e"/>
+          <path d="M55 14 v24" stroke="#b9a67e"/>
+          <path d="M55 126 V60"/>
+          <path d="M34 60 h42"/>
+          <path d="M38 60 v22 M49 60 v22 M60 60 v22 M71 60 v22"/>
+        </svg>
+      </div>
+      <div class="sign">Shop wall &middot; 14 tools &middot; <b>3 hooks empty</b></div>
+    </div>
+  </header>
+
+  <section class="section" id="board">
+    <div class="sect-kicker">On the board</div>
+    <h2>What is hanging<br>and what it took</h2>
+    <p class="sub">Six tools, each with a tag. The tag always carries the cost, not just the win.</p>
+    <p class="benchline">On the bench: <b id="benchCount">1</b> of 6 tools &middot; click a tool to take it down</p>
+
+    <div class="grid taggrid">
+      <a class="tag" href="#" data-tool="solar">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="loop" viewBox="0 0 52 34" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M26 30 C6 14, 46 14, 26 0"/></svg>
+        <svg class="art" viewBox="0 0 120 74" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M14 62 L58 34 L68 50 L24 78 Z"/>
+          <path d="M38 48 L52 60 M30 56 L44 68" stroke-width="1.6"/>
+          <circle cx="92" cy="20" r="11"/>
+          <path d="M92 3 v-3 M92 40 v-3 M75 20 h-3 M112 20 h-3"/>
+        </svg>
+        <h3>The solar array</h3>
+        <p>8.9 MWh a year, 71% of the house, and one string I wired backwards on a Sunday.</p>
+        <div class="cost"><span>$2,940</span><b>net after credit</b></div>
+      </a>
+
+      <a class="tag" href="#" data-tool="bench">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="loop" viewBox="0 0 52 34" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M26 30 C6 14, 46 14, 26 0"/></svg>
+        <svg class="art" viewBox="0 0 120 74" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M40 66 L46 30" stroke-width="5"/>
+          <path d="M34 28 L70 10 L80 26 L46 40 Z"/>
+        </svg>
+        <h3>The workbench</h3>
+        <p>Three weekends, one ruined blade, and a top flat enough to level a door on.</p>
+        <div class="cost"><span>$412</span><b>3 weekends</b></div>
+      </a>
+
+      <a class="tag" href="#" data-tool="beds">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="loop" viewBox="0 0 52 34" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M26 30 C6 14, 46 14, 26 0"/></svg>
+        <svg class="art" viewBox="0 0 120 74" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M60 68 V28"/>
+          <path d="M40 28 h40"/>
+          <path d="M44 28 v20 M54 28 v20 M64 28 v20 M74 28 v20"/>
+        </svg>
+        <h3>Six garden beds</h3>
+        <p>Cedar offcuts, back-breaking soil, and a load of dirt I did not need.</p>
+        <div class="cost"><span>$680</span><b>$210 wasted</b></div>
+      </a>
+
+      <a class="tag out" href="#" data-tool="repairs">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="loop" viewBox="0 0 52 34" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M26 30 C6 14, 46 14, 26 0"/></svg>
+        <svg class="art" viewBox="0 0 120 74" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M26 24 h40 v28 h-40 z"/>
+          <path d="M66 30 h12 v14 h-12 z"/>
+          <path d="M78 37 h22"/>
+          <path d="M36 52 v20 h-16 v-20"/>
+        </svg>
+        <h3>The repair kit</h3>
+        <p>Fourteen jobs. Gross looked fine. Net after parts and one free redo, less so.</p>
+        <div class="cost"><span>$1,905 net</span><b>3 redos</b></div>
+      </a>
+
+      <a class="tag" href="#" data-tool="barrel">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="loop" viewBox="0 0 52 34" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M26 30 C6 14, 46 14, 26 0"/></svg>
+        <svg class="art" viewBox="0 0 120 74" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <ellipse cx="60" cy="58" rx="30" ry="8"/>
+          <path d="M30 58 V28 a30 8 0 0 1 60 0 v30"/>
+          <path d="M30 40 a30 8 0 0 0 60 0"/>
+        </svg>
+        <h3>The rain barrel</h3>
+        <p>1,100 gallons caught, one flooded shed, and a lesson about the overflow.</p>
+        <div class="cost"><span>2 weekends</span><b>1 wet shed</b></div>
+      </a>
+
+      <a class="tag" href="#" data-tool="insulation">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="loop" viewBox="0 0 52 34" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M26 30 C6 14, 46 14, 26 0"/></svg>
+        <svg class="art" viewBox="0 0 120 74" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M20 34 h80 v22 h-80 z"/>
+          <circle cx="60" cy="45" r="6"/>
+          <path d="M30 38 h10 M80 38 h10"/>
+        </svg>
+        <h3>Shop insulation</h3>
+        <p>Two degrees warmer, one weekend longer than planned, and a lot of pink dust.</p>
+        <div class="cost"><span>$640</span><b>pink dust</b></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="missing">
+    <div class="sect-kicker">Empty hooks</div>
+    <h2>What is not<br>on the wall</h2>
+    <p class="sub">Left dashed and left up. A board that only shows the wins is a board I do not trust.</p>
+    <div class="vacant">
+      <div class="vac">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 60" fill="none" stroke="#2a241c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M26 20 h40 v28 h-40 z"/><path d="M66 26 h12 v14 h-12 z"/><path d="M78 33 h22"/>
+        </svg>
+        <h3>The 3/8 bit</h3>
+        <p>Off the wall since March. A neighbour has it and it works fine. I just do not have it.</p>
+      </div>
+      <div class="vac">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 60" fill="none" stroke="#2a241c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M20 44 h80 v-10 h-80 z"/><path d="M24 34 l6 -8 l6 8 l6 -8 l6 8 l6 -8 l6 8 l6 -8 l6 8 l6 -8 l6 8"/>
+        </svg>
+        <h3>The planer blade</h3>
+        <p>Ruined on a nail in a pallet board. $34 and a weekend of planing by hand.</p>
+      </div>
+      <div class="vac">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 60" fill="none" stroke="#2a241c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M18 36 h84 v14 h-84 z"/><path d="M30 36 v-6 M44 36 v-10 M58 36 v-6 M72 36 v-10 M86 36 v-6"/>
+        </svg>
+        <h3>The tape measure</h3>
+        <p>Left in the rain. Numbers gone from four feet on, which is most of what I build.</p>
+      </div>
+      <div class="vac">
+        <span class="hole" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 60" fill="none" stroke="#2a241c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <path d="M40 16 c-9 -7 -21 -2 -21 9 c0 6 6 12 12 12 c6 0 9 -4 9 -8"/><path d="M42 22 L74 54"/>
+        </svg>
+        <h3>The 11-piece wrench set</h3>
+        <p>Bought before I knew what I was working on. Three sizes have ever been used.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sect-kicker">Bench tally</div>
+    <h2>Four numbers I keep</h2>
+    <div class="tally">
+      <div class="t win"><b>8.9 MWh</b><span>made by the array this year</span></div>
+      <div class="t cost"><b>$2,940</b><span>net out of pocket, credit included</span></div>
+      <div class="t cost"><b>3</b><span>jobs redone free after mispricing</span></div>
+      <div class="t win"><b>$1,905</b><span>net side income, parts deducted</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sect-kicker">Next up</div>
+    <h2>On the bench</h2>
+    <ul class="next">
+      <li>
+        <span class="box" aria-hidden="true"></span>
+        <div>
+          <h3>Rehang the shop gutter</h3>
+          <p>It has been leaning since spring and I keep walking past it.</p>
+        </div>
+        <span class="when">this month</span>
+      </li>
+      <li>
+        <span class="box" aria-hidden="true"></span>
+        <div>
+          <h3>Finish the cold frame lids</h3>
+          <p>The frames are built. The lids are still a sketch on the back of an envelope.</p>
+        </div>
+        <span class="when">before frost</span>
+      </li>
+      <li>
+        <span class="box" aria-hidden="true"></span>
+        <div>
+          <h3>Price the second array honestly</h3>
+          <p>Including the trenching this time, which is where the last number went wrong.</p>
+        </div>
+        <span class="when">winter</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <span><b>Pegboard</b> &middot; a mockup direction</span>
+    <span>Every project hung on the wall with what it cost &middot; empty hooks included</span>
+    <span class="chips" aria-hidden="true">
+      <i style="background:#d6c39f"></i><i style="background:#b5432f"></i><i style="background:#6f7a4a"></i><i style="background:#4d6b7a"></i><i style="background:#2a241c"></i>
+    </span>
+  </footer>
+
+</div>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <filter id="wobble" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="11" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<script>
+(function(){
+  var tags = Array.prototype.slice.call(document.querySelectorAll('.tag'));
+  var count = document.getElementById('benchCount');
+  function update(){
+    if (count) count.textContent = tags.filter(function(t){ return t.classList.contains('out'); }).length;
+  }
+  tags.forEach(function(tag){
+    tag.addEventListener('click', function(event){
+      event.preventDefault();
+      tag.classList.toggle('out');
+      update();
+    });
+  });
+  update();
+})();
+</script>
+</body>
+</html>
