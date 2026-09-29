@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="The Property Herald - a local broadsheet reporting from the working property: the wins, the corrections, and the classifieds. A mockup direction for The Independent Home.">
+<title>The Property Herald - The Independent Home mockup</title>
+<style>
+:root{--paper:#f6eedf;--ink:#20251f;--muted:#686258;--green:#41583b;--rust:#9a4f2f;--gold:#d8ad61;--line:rgba(32,37,31,.18);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--serif:Georgia,serif;--sans:system-ui,-apple-system,Segoe UI,sans-serif}*{box-sizing:border-box}body{margin:0;background:linear-gradient(rgba(32,37,31,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(32,37,31,.025) 1px,transparent 1px),var(--paper);background-size:32px 32px;color:var(--ink);font-family:var(--sans);line-height:1.55}a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:16px;font-family:var(--mono);font-size:13px;text-transform:uppercase}.nav{display:flex;gap:12px;flex-wrap:wrap}.nav a{text-decoration:none;border-bottom:1px dashed var(--muted)}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;padding:38px 0}.kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--rust);font-size:13px}.title{font-family:var(--serif);font-size:clamp(44px,7vw,86px);line-height:.9;letter-spacing:-.055em;margin:10px 0 18px}.lede{font-size:clamp(19px,2.2vw,27px);font-family:var(--serif);line-height:1.2;max-width:760px}.card,.panel{background:#fff8ea;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(32,37,31,.14);border-radius:18px;padding:20px}.mono{font-family:var(--mono);white-space:pre-wrap;font-size:14px;line-height:1.72}.scan{min-height:260px;background:repeating-linear-gradient(#fff8ea,#fff8ea 28px,rgba(65,88,59,.18) 29px);border:1px dashed var(--muted);padding:24px;font-family:"Comic Sans MS","Bradley Hand",cursive;font-size:22px;transform:rotate(-.6deg)}.note{color:var(--rust);background:rgba(154,79,47,.08);padding:1px 4px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.post{min-height:230px;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between}.post h3{font-family:var(--serif);font-size:25px;line-height:1;margin:0 0 10px}.post p{color:var(--muted);font-size:14px}.meta{font-family:var(--mono);font-size:11px;color:var(--rust);text-transform:uppercase;border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}.card{display:flex;flex-direction:column}.card>h2,.card>h3,.card>p{margin-top:0;margin-bottom:12px}.card>p:last-child{margin-bottom:0}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat b{display:block;font-family:var(--mono);font-size:34px;color:var(--green);line-height:1}.stat span{font-size:13px;color:var(--muted)}.section{border-top:2px solid var(--ink);padding-top:24px;margin-top:26px}.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 16px;border:2px solid var(--ink);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:13px}.btn.alt{background:transparent;color:var(--ink)}footer{border-top:2px solid var(--ink);margin-top:36px;padding-top:18px;color:var(--muted);font-family:var(--mono);font-size:12px}.judge{background:#edf4e6;border-left:8px solid var(--green)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:580px){.wrap{padding:14px}.top{align-items:flex-start;flex-direction:column}.grid,.statgrid{grid-template-columns:1fr}.title{font-size:46px}}
+</style>
+<style>
+:root{
+  --paper:#ece2cb;
+  --ink:#1a1612;
+  --muted:#6a6053;
+  --red:#a52a1f;
+  --rule:rgba(26,22,18,.4);
+  --line:rgba(26,22,18,.22);
+  --display:Impact,"Arial Black","Helvetica Neue",sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+body{
+  background-color:var(--paper);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23w)' opacity='.2'/%3E%3C/svg%3E");
+  background-blend-mode:multiply;
+  color:var(--ink);
+  font-family:var(--serif);
+}
+
+/* ---------- top dateline ---------- */
+.dateline{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--rule);padding:9px 0 8px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.dateline .left b{color:var(--red)}
+.dateline .right{color:var(--muted)}
+
+/* ---------- masthead ---------- */
+.masthead{text-align:center;padding:20px 0 14px;border-bottom:6px double var(--ink)}
+.name{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(46px,8.4vw,116px);line-height:.86;letter-spacing:-.025em;margin:0}
+.tag{font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--muted);margin:4px 0 0}
+
+/* ---------- nav (inter-page) ---------- */
+.navline{display:flex;flex-wrap:wrap;gap:10px 14px;justify-content:center;padding:10px 0;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.navline a{text-decoration:none;color:var(--ink);border-bottom:1px dashed var(--muted);padding-bottom:1px}
+.navline a:hover{color:var(--red);border-bottom-color:var(--red)}
+.navline a[aria-current="page"]{color:var(--red);border-bottom-color:var(--red);font-weight:700}
+.navline a.home{color:var(--muted);border-bottom-color:transparent}
+
+/* ---------- lead story ---------- */
+.lead{padding:30px 0 18px;border-bottom:1px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.hl{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.6vw,46px);line-height:1.08;letter-spacing:-.01em;margin:8px 0 8px;max-width:22ch}
+.sub{font-family:var(--serif);font-style:italic;font-size:clamp(16px,1.7vw,19px);color:var(--muted);margin:0 0 10px;max-width:42ch}
+.byline{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--rule);margin-bottom:16px}
+.lead-art{position:relative;margin:0 0 6px;padding:8px;background:#f6efd8;border:1px solid var(--ink);box-shadow:6px 6px 0 rgba(26,22,18,.16)}
+.lead-art svg{width:100%;height:auto;display:block}
+.caption{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--muted);margin:4px 0 18px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.body{font-size:15.5px;line-height:1.55;column-count:2;column-gap:30px;text-align:justify}
+.body p{margin:0 0 10px}
+.body p:first-child::first-letter{font-family:var(--display);font-size:52px;line-height:.9;float:left;padding:4px 8px 0 0;color:var(--red)}
+
+/* ---------- briefs ---------- */
+.briefs{padding:24px 0;border-bottom:1px solid var(--rule)}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:10px}
+.brief h3{font-family:var(--serif);font-weight:700;font-size:18px;line-height:1.12;margin:0 0 6px}
+.brief p{font-size:14.5px;line-height:1.45;margin:0 0 8px;color:var(--ink)}
+.brief .src{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);border-top:1px solid var(--rule);padding-top:6px;display:block}
+
+/* ---------- corrections ---------- */
+.corrections{padding:24px 0;border-bottom:1px solid var(--ink)}
+.corrbox{border:4px double var(--red);background:rgba(165,42,31,.05);padding:18px 22px;margin-top:10px}
+.corrbox h2{font-family:var(--serif);font-weight:700;font-style:italic;font-size:22px;margin:0 0 10px;color:var(--red)}
+.corr{list-style:decimal;padding-left:22px;margin:0 0 12px;font-size:15px;line-height:1.5}
+.corr li{margin-bottom:8px}
+.corr li::marker{color:var(--red);font-weight:700;font-family:var(--display);font-size:17px}
+.sig{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--muted);margin:0}
+
+/* ---------- classifieds ---------- */
+.classifieds{padding:24px 0;border-bottom:1px solid var(--ink)}
+.ads{list-style:none;padding:0;margin:10px 0 0;font-family:var(--mono);font-size:13px;line-height:1.5}
+.ads li{display:grid;grid-template-columns:96px 1fr auto;gap:12px;padding:8px 0;border-top:1px dotted var(--rule);align-items:baseline}
+.ads li:first-child{border-top:2px solid var(--ink)}
+.ads b{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:11.5px;color:var(--ink)}
+.ads em{font-style:normal;color:var(--muted);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase}
+
+/* ---------- ask the property ---------- */
+.advice{padding:24px 0;border-bottom:1px solid var(--rule)}
+.qa{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:10px}
+.qa-item .q{font-family:var(--serif);font-style:italic;font-size:15px;margin:0 0 6px;color:var(--ink)}
+.qa-item .q b{color:var(--red);font-style:normal;font-family:var(--display);font-size:18px;margin-right:4px}
+.qa-item .a{font-family:var(--serif);font-size:15px;line-height:1.5;margin:0;padding-left:22px;border-left:3px solid var(--ink)}
+.qa-item .a b{color:var(--ink);font-family:var(--display);font-size:18px;margin-right:6px}
+
+/* ---------- tally ---------- */
+.tally{padding:24px 0 0}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:10px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.tgrid > div{padding:16px 14px 18px;border-right:1px solid var(--rule)}
+.tgrid > div:last-child{border-right:0}
+.tgrid b{font-family:var(--display);font-weight:900;font-size:30px;line-height:1;display:block}
+.tgrid span{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-top:6px;line-height:1.5}
+
+/* ---------- footer ---------- */
+footer{border-top:4px double var(--ink);margin-top:30px;padding:16px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);align-items:center}
+footer b{color:var(--ink)}
+footer .chips{display:flex;gap:5px}
+footer .chips i{width:14px;height:14px;border:1.5px solid var(--ink)}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .bgrid{grid-template-columns:1fr 1fr}
+  .body{column-count:1}
+  .body p:first-child::first-letter{font-size:42px}
+  .qa{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  .tgrid > div{border-bottom:1px solid var(--rule)}
+  .tgrid > div:nth-child(2n){border-right:0}
+  .ads li{grid-template-columns:1fr;gap:2px}
+}
+@media(max-width:580px){
+  .bgrid{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr}
+  .tgrid > div{border-right:0}
+  .name{font-size:42px}
+  .dateline{font-size:10px}
+  .lead-art{padding:6px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="dateline" aria-label="Dateline">
+    <span class="left">Vol. <b>11</b> &middot; No. 12 &middot; Tuesday, <b>September 29, 2026</b> &middot; 25 cents</span>
+    <span class="right">60&deg; and clear &middot; full report inside</span>
+  </div>
+
+  <header class="masthead">
+    <h1 class="name">The Property Herald</h1>
+    <p class="tag">Reporting from the working property &middot; est. 2019 &middot; circulation 1</p>
+  </header>
+
+  <nav class="navline" aria-label="Mockup directions">
+    <a class="home" href="index.html">All directions</a>
+    <a href="field-journal.html">Field journal</a>
+    <a href="ledger.html">Ledger</a>
+    <a href="homestead.html">Homestead</a>
+    <a href="terminal.html">Terminal</a>
+    <a href="ephemera.html">Ephemera</a>
+    <a href="blueprint.html">Blueprint</a>
+    <a href="workshop.html">Workshop</a>
+    <a href="almanac.html">Almanac</a>
+    <a href="proof.html">Proof</a>
+    <a href="dispatches.html">Dispatches</a>
+    <a href="pegboard.html">Pegboard</a>
+    <a href="herald.html" aria-current="page">Herald</a>
+  </nav>
+
+  <section class="lead" id="front">
+    <div class="kicker">Front page</div>
+    <h2 class="hl">Solar year clears 71% of house use, with two invoices the paper wishes it had printed correctly</h2>
+    <p class="sub">One year, one array, one longer winter than the spreadsheet accounted for.</p>
+    <div class="byline">By the property &middot; Tuesday, September 29, 2026</div>
+
+    <figure class="lead-art">
+      <svg viewBox="0 0 360 230" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" role="img" aria-label="Hand-painted watercolour of the property: solar array, house, sun, garden beds and a single tree">
+        <g fill="#c9a55e" fill-opacity=".32">
+          <path d="M30 128 l40 -22 l52 28 l-46 36 z"/>
+          <path d="M150 92 l60 -38 l60 38 l0 80 l-120 0 z"/>
+        </g>
+        <g fill="#6b7f3a" fill-opacity=".42">
+          <path d="M50 210 v-30 c-10 0 -16 -10 -10 -18 c12 -2 14 12 10 18 M50 210 v-34"/>
+          <ellipse cx="320" cy="206" rx="20" ry="10"/>
+        </g>
+        <g fill="#d8a73a" fill-opacity=".55">
+          <circle cx="308" cy="48" r="22"/>
+        </g>
+        <g fill="#3a3128" fill-opacity=".6">
+          <rect x="34" y="130" width="38" height="2" transform="rotate(-26 53 131)"/>
+          <rect x="34" y="136" width="38" height="2" transform="rotate(-26 53 137)"/>
+          <rect x="34" y="142" width="38" height="2" transform="rotate(-26 53 143)"/>
+          <rect x="34" y="148" width="38" height="2" transform="rotate(-26 53 149)"/>
+        </g>
+        <g stroke="#1a1612" stroke-width="2.4" fill="none">
+          <path d="M30 128 l40 -22 l52 28 l-46 36 z"/>
+          <path d="M40 122 l44 22"/>
+          <path d="M40 132 l44 24"/>
+          <path d="M40 142 l44 26"/>
+          <path d="M150 92 l60 -38 l60 38"/>
+          <path d="M150 92 l0 80 l120 0 l0 -80"/>
+          <path d="M200 172 v-34 h28 v34"/>
+          <path d="M236 110 h30 v24 h-30 z"/>
+          <path d="M236 110 l30 -16 M266 110 l-30 -16"/>
+          <path d="M0 210 h360"/>
+          <path d="M50 210 v-30 c-10 0 -16 -10 -10 -18 c12 -2 14 12 10 18"/>
+          <path d="M50 210 v-34 c0 -16 16 -20 16 -2 v36"/>
+          <path d="M308 48 m-22 0 a22 22 0 1 1 44 0 a22 22 0 1 1 -44 0"/>
+        </g>
+        <g font-family="ui-monospace,Menlo,monospace" fill="#1a1612">
+          <text x="148" y="200" font-size="10" letter-spacing="1">8.9 MWh / YR</text>
+          <text x="252" y="200" font-size="10" letter-spacing="1" fill="#a52a1f">18 PANELS</text>
+        </g>
+      </svg>
+    </figure>
+    <p class="caption">The array, drawn from the kitchen window, with the sun on its second lap of the year. Watercolour, one sitting.</p>
+
+    <div class="body">
+      <p>We are one year into the array, and the year is at last complete. The panels made 8.9 megawatt-hours of power, which is 71 per cent of what the house used. The remaining 29 per cent came off the grid, almost all of it in January, when the trees win and the meter runs faster than the inverter.</p>
+      <p>It cost $2,940 out of pocket after the credit. The paper has this number down because every invoice was written down, including the two the property would rather not have printed. The credit took eleven weeks. The trenching took longer than the wiring. Both are mentioned, in the corrections panel below.</p>
+      <p>If the house can make power and cost less to run, then work gets a little less powerful over the life of the property. That is the whole plan, and it is not a secret one. It is also not free, and the property would like it known that it is not free.</p>
+    </div>
+  </section>
+
+  <section class="briefs" id="around">
+    <div class="kicker">Around the property</div>
+    <div class="bgrid">
+      <article class="brief">
+        <h3>Six beds, two of them well-rotted</h3>
+        <p>Two of the six garden beds paid for themselves in groceries. The other four paid for themselves in lessons, principally the lesson that you should buy the dirt after you build the bed.</p>
+        <span class="src">Dispatch 06</span>
+      </article>
+      <article class="brief">
+        <h3>Repair kit posts a net number, at last</h3>
+        <p>Fourteen jobs this year. Gross looked fine. Net after parts, tires and one free redo came to $1,905. The free redo is the only job the property would not redo differently, given the same information.</p>
+        <span class="src">Dispatch 11</span>
+      </article>
+      <article class="brief">
+        <h3>Rain barrel test enters phase two</h3>
+        <p>1,100 gallons caught, one shed flooded, one overflow learned. The property is shopping for a second barrel and a longer downspout. The guttering remains unfinished.</p>
+        <span class="src">Dispatch 03</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="corrections" id="corrections">
+    <div class="kicker">Corrections</div>
+    <div class="corrbox">
+      <h2>&ldquo;The paper regrets the errors, and is better for knowing.&rdquo;</h2>
+      <ol class="corr">
+        <li>In the August 9 report on the $412 bench, the planer blade was listed at $34. It was, in fact, $34 <em>and</em> a weekend. The paper regrets the omitted weekend.</li>
+        <li>A reader writes to point out that the dirt in the garden beds ($210) was not, in fact, needed. The property agrees, and stands corrected.</li>
+        <li>The tape measure is accurate to four feet. Earlier reports suggesting otherwise referred to the same tape measure, left in the rain. The property stands by it, and by the four feet.</li>
+        <li>We are asked to clarify that the lent-out 3/8 inch bit is, in fact, lent out. The earlier reference to it being off the wall since March is correct, and is not in dispute.</li>
+      </ol>
+      <p class="sig">&mdash; The Editor, on behalf of the property.</p>
+    </div>
+  </section>
+
+  <section class="classifieds" id="classifieds">
+    <div class="kicker">Classifieds</div>
+    <ul class="ads">
+      <li><b>For sale</b><span>24 ft of cedar. Bought five feet too much. Best offer, within reason.</span><em>&mdash; The Property</em></li>
+      <li><b>Wanted</b><span>One accurate tape measure, working past four feet.</span><em>&mdash; The Workshop</em></li>
+      <li><b>Lost</b><span>One 3/8 inch bit, off the wall since March. Reward: a thank-you.</span><em>&mdash; The Pegboard</em></li>
+      <li><b>Free</b><span>Reasonable confidence, lightly used, some scratches, runs on the truth.</span><em>&mdash; The Mailbag</em></li>
+      <li><b>Wanted</b><span>A tradesperson who knows where the drip is.</span><em>&mdash; The Kitchen</em></li>
+    </ul>
+  </section>
+
+  <section class="advice" id="ask">
+    <div class="kicker">Ask the property</div>
+    <div class="qa">
+      <div class="qa-item">
+        <p class="q"><b>Q.</b>I am thinking about a second solar array this winter. Should I price it the way I priced the first one?</p>
+        <p class="a"><b>A.</b>Include the trenching. The trenching is where the last number went wrong, and the number you do not write down is the number you remember.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q"><b>Q.</b>How do you know when a project is done?</p>
+        <p class="a"><b>A.</b>When the cost stops being interesting. It is not done when the win is. The win is when the project is interesting. The cost is when it becomes a project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tally" id="tally">
+    <div class="kicker">This year, by the numbers</div>
+    <div class="tgrid">
+      <div><b>8.9 MWh</b><span>made by the array this year</span></div>
+      <div><b>$2,940</b><span>net out of pocket, credit included</span></div>
+      <div><b>3</b><span>jobs redone free after mispricing</span></div>
+      <div><b>$1,905</b><span>net side income, parts deducted</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span><b>The Property Herald</b> &middot; a mockup direction &middot; circulation 1</span>
+    <span>Printed at the kitchen table on cream stock &middot; corrections always welcome</span>
+    <span class="chips" aria-hidden="true">
+      <i style="background:#ece2cb"></i><i style="background:#1a1612"></i><i style="background:#a52a1f"></i>
+    </span>
+  </footer>
+
+</div>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <filter id="wobble" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="13" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.1" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+</body>
+</html>
