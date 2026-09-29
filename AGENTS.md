@@ -75,7 +75,9 @@ however good it looks.
 | File | Role |
 |---|---|
 | `index.html` | Neutral directory of all directions |
-| `README.md` | Theme, directions list, viewing and CSS notes |
+| `README.md` | Theme, directions list, attribution, viewing and CSS notes |
+| `AGENTS.md` | This file: theme, build rules, and documentation conventions |
+| `docs/` | OKF project documentation (see [Documentation](#documentation)) |
 | `*.html` | One standalone direction each |
 
 ## Verification
@@ -87,3 +89,32 @@ grep -rn 'rel="stylesheet"\|@import\|\.css' *.html
 # every page still carries its own styles
 for f in *.html; do printf "%-22s %s\n" "$f" "$(grep -o '<style>' "$f" | wc -l)"; done
 ```
+
+
+## Documentation
+
+Project documentation lives in `docs/` and follows
+[OKF v0.2](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md)
+conventions:
+
+- Concept documents are UTF-8 Markdown with YAML frontmatter and a non-empty `type`.
+- Prefer `title`, `description`, `resource`, and `tags` when useful.
+- Use `generated` when its value is known: `by` identifies the actor, `at` is an
+  ISO 8601 datetime with an explicit UTC offset. Do **not** fabricate provenance,
+  verification, freshness, or trust metadata.
+- `index.md` and `log.md` are reserved files following OKF's index and
+  chronological log structures. `docs/index.md` declares `okf_version: "0.2"`.
+- Link between concepts with standard Markdown, bundle-root-relative.
+- Prefer headings, lists, tables, and fenced code blocks over long prose.
+
+## Docs Pointers
+
+- Start at [`docs/index.md`](docs/index.md) for progressive disclosure.
+- Runtime shape and the directions: [`docs/architecture.md`](docs/architecture.md).
+- Preview and validation commands: [`docs/setup.md`](docs/setup.md).
+- Current phase and next decisions: [`docs/status.md`](docs/status.md).
+- Decisions and gotchas: [`docs/notes.md`](docs/notes.md).
+- Chronological history: [`docs/log.md`](docs/log.md).
+
+When adding or changing a direction, also update `docs/architecture.md` (the files
+table), `docs/status.md` (phase and next tasks), and `docs/log.md` (an entry).
