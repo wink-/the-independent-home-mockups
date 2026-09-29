@@ -4,6 +4,17 @@ Static redesign mockups for a handwritten-first version of The Independent Home.
 
 Live site: https://wink-.github.io/the-independent-home-mockups/
 
+<!-- PROJECT-DOCS:START -->
+## Project Docs
+
+- [Docs index](docs/index.md) - progressive disclosure entry point
+- [Architecture](docs/architecture.md) - runtime shape and key files
+- [Setup](docs/setup.md) - local preview and validation
+- [Status](docs/status.md) - current phase and next tasks
+- [Notes](docs/notes.md) - decisions and gotchas
+- [Log](docs/log.md) - chronological history
+<!-- PROJECT-DOCS:END -->
+
 ## The theme
 
 The Independent Home is a personal journal about building a more self-sufficient
