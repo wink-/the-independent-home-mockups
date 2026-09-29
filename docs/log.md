@@ -2,6 +2,8 @@
 
 ## 2026-09-29
 
+- Retired the stale `docs/refine-okf-format` branch and archived its commits as
+  tag `archive/okf-docs-20260707`, so the original work stays recoverable.
 - Wrote current OKF documentation against the thirteen-direction tree
   (`docs/index.md`, `architecture.md`, `setup.md`, `status.md`, `notes.md`,
   `log.md`), using OKF v0.2 conventions.
