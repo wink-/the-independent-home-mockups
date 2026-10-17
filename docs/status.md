@@ -5,22 +5,22 @@ description: Current project phase and next tasks for The Independent Home mocku
 resource: the-independent-home-mockups
 tags: [status, roadmap]
 generated:
-  by: MiMo-V2.6-Pro (OpenCode)
-  at: 2026-09-29T20:05:16+00:00
+  by: Gemini 4 Argon Contributor (OpenCode)
+  at: 2026-10-17T19:02:00+00:00
 ---
 
-# Status: Thirteen Directions, Ready for the Vote
+# Status: Fifteen Directions, Ready for the Vote
 
 The mockup set is complete and live. The open question is a design decision, not
 an engineering one.
 
 ## Completed
 
-- Thirteen distinct directions are built and published to `main`.
+- Fifteen distinct directions are built (1–14 published to `main`, 15 on `add-direction-seed-box-20261017`).
 - Each direction is standalone: zero external references, all CSS inline.
 - Theme brief recorded in [`../README.md`](../README.md) and
   [`../AGENTS.md`](../AGENTS.md); every direction honours it.
-- Model attribution recorded per direction in the README (directions 8–13 name
+- Model attribution recorded per direction in the README (directions 8–15 name
   the model that built them; 1–7 predate the practice).
 - `style.css` removed; each page owns its CSS in two inline blocks.
 - OKF documentation written against the current tree.
@@ -40,7 +40,7 @@ an engineering one.
 
 ## Last Worked On
 
-- 2026-09-29: Added The Quilt (13th direction). Wrote current OKF docs.
+- 2026-10-17: Added The Herbarium (14th direction, `herbarium.html`) and The Seed Box (15th direction, `seed-box.html`).
 
 ## Suggested First Command
 

@@ -1,5 +1,13 @@
 # Log
 
+## 2026-10-17
+
+- Added The Herbarium (14th direction, `herbarium.html`), built by `beam-free`.
+- Added The Seed Box (15th direction, `seed-box.html`), built by `gemini-4-argon-contributor`:
+  illustrated heirloom seed packets sorted by system divider, click-to-flip back-flap
+  sowing math and warnings, and empty hulls in the back row for the 0%-germination duds.
+- Updated `index.html`, all page navigation bars, `README.md`, and OKF documentation.
+
 ## 2026-09-29
 
 - Retired the stale `docs/refine-okf-format` branch and archived its commits as

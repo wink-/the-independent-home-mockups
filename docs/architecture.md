@@ -5,13 +5,13 @@ description: Runtime shape and key files for The Independent Home mockups.
 resource: the-independent-home-mockups
 tags: [architecture, static-site, mockups]
 generated:
-  by: MiMo-V2.6-Pro (OpenCode)
-  at: 2026-09-29T20:05:16+00:00
+  by: Gemini 4 Argon Contributor (OpenCode)
+  at: 2026-10-17T19:02:00+00:00
 ---
 
 # Architecture
 
-A plain static mockup gallery. Thirteen self-contained design directions, plus a
+A plain static mockup gallery. Fifteen self-contained design directions, plus a
 neutral directory page. No build step, no dependencies, no framework.
 
 ## Runtime Shape
@@ -35,6 +35,8 @@ nothing is linked, nothing is bundled.
 | `pegboard.html` | Shop wall: tools on hooks, kraft tags, empty hooks for mistakes |
 | `herald.html` | Local broadsheet: front page, briefs, corrections, classifieds |
 | `quilt.html` | Mended patchwork quilt: patches, stitched seams, mending ledger |
+| `herbarium.html` | Pressed botanical specimens, specimen labels, and specimens that did not take |
+| `seed-box.html` | Cedar seed box: illustrated heirloom packets, flip-for-back-flap notes, and empty hulls |
 
 ## Styling Contract
 

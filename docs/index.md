@@ -5,13 +5,13 @@ description: Progressive disclosure index for The Independent Home mockup docume
 resource: the-independent-home-mockups
 tags: [okf, docs, static-site, mockups]
 generated:
-  by: MiMo-V2.6-Pro (OpenCode)
-  at: 2026-09-29T20:05:16+00:00
+  by: Gemini 4 Argon Contributor (OpenCode)
+  at: 2026-10-17T19:02:00+00:00
 ---
 
 # The Independent Home Mockups Docs
 
-OKF documentation for the static mockup gallery of The Independent Home: thirteen
+OKF documentation for the static mockup gallery of The Independent Home: fifteen
 standalone design directions, shown side by side so people can vote on a favorite.
 
 ## Start Here
@@ -21,7 +21,7 @@ standalone design directions, shown side by side so people can vote on a favorit
 
 ## Deeper Context
 
-- [Architecture](architecture.md) — runtime shape, the thirteen directions, styling contract, and deployment.
+- [Architecture](architecture.md) — runtime shape, the fifteen directions, styling contract, and deployment.
 - [Notes](notes.md) — decisions, gotchas, and context to remember.
 - [Log](log.md) — chronological project documentation history.
 
