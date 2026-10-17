@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="The Shoebox - instant photos from the working property, with the date and cost written on the back, and the prints that did not come out kept in the box.">
+<title>The Shoebox - The Independent Home mockup</title>
+<style>
+:root{--paper:#f6eedf;--ink:#20251f;--muted:#686258;--green:#41583b;--rust:#9a4f2f;--gold:#d8ad61;--line:rgba(32,37,31,.18);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--serif:Georgia,serif;--sans:system-ui,-apple-system,Segoe UI,sans-serif}*{box-sizing:border-box}body{margin:0;background:linear-gradient(rgba(32,37,31,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(32,37,31,.025) 1px,transparent 1px),var(--paper);background-size:32px 32px;color:var(--ink);font-family:var(--sans);line-height:1.55}a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:16px;font-family:var(--mono);font-size:13px;text-transform:uppercase}.nav{display:flex;gap:12px;flex-wrap:wrap}.nav a{text-decoration:none;border-bottom:1px dashed var(--muted)}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;padding:38px 0}.kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--rust);font-size:13px}.title{font-family:var(--serif);font-size:clamp(44px,7vw,86px);line-height:.9;letter-spacing:-.055em;margin:10px 0 18px}.lede{font-size:clamp(19px,2.2vw,27px);font-family:var(--serif);line-height:1.2;max-width:760px}.card,.panel{background:#fff8ea;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(32,37,31,.14);border-radius:18px;padding:20px}.mono{font-family:var(--mono);white-space:pre-wrap;font-size:14px;line-height:1.72}.scan{min-height:260px;background:repeating-linear-gradient(#fff8ea,#fff8ea 28px,rgba(65,88,59,.18) 29px);border:1px dashed var(--muted);padding:24px;font-family:"Comic Sans MS","Bradley Hand",cursive;font-size:22px;transform:rotate(-.6deg)}.note{color:var(--rust);background:rgba(154,79,47,.08);padding:1px 4px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.post{min-height:230px;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between}.post h3{font-family:var(--serif);font-size:25px;line-height:1;margin:0 0 10px}.post p{color:var(--muted);font-size:14px}.meta{font-family:var(--mono);font-size:11px;color:var(--rust);text-transform:uppercase;border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}.card{display:flex;flex-direction:column}.card>h2,.card>h3,.card>p{margin-top:0;margin-bottom:12px}.card>p:last-child{margin-bottom:0}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat b{display:block;font-family:var(--mono);font-size:34px;color:var(--green);line-height:1}.stat span{font-size:13px;color:var(--muted)}.section{border-top:2px solid var(--ink);padding-top:24px;margin-top:26px}.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 16px;border:2px solid var(--ink);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:13px}.btn.alt{background:transparent;color:var(--ink)}footer{border-top:2px solid var(--ink);margin-top:36px;padding-top:18px;color:var(--muted);font-family:var(--mono);font-size:12px}.judge{background:#edf4e6;border-left:8px solid var(--green)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:580px){.wrap{padding:14px}.top{align-items:flex-start;flex-direction:column}.grid,.statgrid{grid-template-columns:1fr}.title{font-size:46px}}
+</style>
+<style>
+:root{
+  --dark:#2f4a48; --dark2:#213533; --cream:#f7f1e1; --ink2:#22302e;
+  --amber:#e0a040; --red:#c8553d; --muted:#b7c3b6; --line:rgba(247,241,225,.2);
+  --serif:Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --hand:"Segoe Print","Bradley Hand","Chalkboard SE","Marker Felt","Comic Sans MS","Liberation Serif",cursive;
+}
+body{
+  background:radial-gradient(ellipse at 30% 0%,#3d5f5b 0%,var(--dark) 45%,var(--dark2) 100%);
+  color:var(--cream);font-family:var(--serif);
+}
+.masthead{text-align:center;padding:32px 0 16px}
+.name{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(44px,7.4vw,90px);line-height:.92;margin:0;color:var(--cream)}
+.sub{font-style:italic;color:var(--muted);font-size:15.5px;max-width:60ch;margin:12px auto 0}
+.navline{display:flex;flex-wrap:wrap;gap:10px 14px;justify-content:center;padding:18px 0 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.navline a{color:var(--cream);text-decoration:none;border-bottom:1px dashed var(--muted);padding-bottom:1px}
+.navline a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+.navline a[aria-current="page"]{color:var(--amber);border-bottom:2px solid var(--amber);font-weight:700}
+.navline a.home{color:var(--muted);border-bottom-color:transparent}
+.section{border-top:1px solid var(--line);padding-top:28px;margin-top:40px}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+.section h2{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(24px,3.2vw,36px);line-height:1.1;margin:0 0 8px}
+.section .sub{font-style:normal;color:var(--muted);font-size:16px;max-width:60ch;margin:0}
+.lead{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:30px}
+.lead .copy{font-size:17.5px;line-height:1.55;color:var(--cream)}
+.lead .copy p{margin:0 0 14px}
+.pol{position:relative;background:var(--cream);padding:12px 12px 0;box-shadow:0 14px 26px rgba(0,0,0,.38);transform:rotate(var(--r,0deg));transition:transform .2s ease}
+.pol:hover{transform:rotate(0deg) translateY(-4px)}
+.pol::before{content:"";position:absolute;top:-11px;left:50%;margin-left:-34px;width:68px;height:20px;background:rgba(255,255,255,.42);border:1px dashed rgba(0,0,0,.08);transform:rotate(-3deg);z-index:3}
+.pol .pic{position:relative;aspect-ratio:1/1;overflow:hidden;background:#111}
+.pol .pic svg{display:block;width:100%;height:100%}
+.pol .cap{padding:12px 6px 16px;color:var(--ink2);font-family:var(--hand);font-size:19px;line-height:1.25;min-height:76px}
+.pol .date{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--red);margin-bottom:6px;text-transform:uppercase}
+.pol.lead-pol{width:100%;max-width:460px;justify-self:center;--r:-2deg}
+.pol.bad .pic svg{filter:blur(3px) brightness(.62) contrast(.8)}
+.pol.bad .pic::after{content:"";position:absolute;inset:0;background:rgba(200,85,61,.14)}
+.stamp{position:absolute;top:40px;left:24px;transform:rotate(-14deg);border:3px solid var(--red);color:var(--red);font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.2em;padding:6px 10px;background:rgba(247,241,225,.78);z-index:2}
+.grid.pols{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 30px;margin-top:34px}
+.tally{display:grid;grid-template-columns:repeat(4,1fr);background:var(--cream);color:var(--ink2);margin-top:34px;transform:rotate(-.4deg);box-shadow:0 10px 20px rgba(0,0,0,.3)}
+.tally>div{padding:18px 16px;border-right:1px solid rgba(34,48,46,.2)}
+.tally>div:last-child{border-right:0}
+.tally b{font-family:var(--serif);font-weight:700;font-size:28px;display:block}
+.tally span{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#4f5e5b;display:block;margin-top:6px;line-height:1.5}
+.note{margin-top:34px;font-family:var(--hand);font-size:22px;line-height:1.45;color:var(--cream);transform:rotate(-.6deg);max-width:60ch}
+.note .sig{font-size:17px;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:18px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);align-items:center}
+footer b{color:var(--cream)}
+footer .chips{display:flex;gap:5px}
+footer .chips i{width:14px;height:14px;border:1.5px solid var(--cream)}
+@media(max-width:900px){
+  .lead{grid-template-columns:1fr}
+  .grid.pols{grid-template-columns:repeat(2,1fr)}
+  .tally{grid-template-columns:repeat(2,1fr)}
+  .tally>div:nth-child(2n){border-right:0}
+  .tally>div:nth-child(-n+2){border-bottom:1px solid rgba(34,48,46,.2)}
+}
+@media(max-width:580px){
+  .grid.pols{grid-template-columns:1fr}
+  .tally{grid-template-columns:1fr}
+  .tally>div{border-right:0}
+  .name{font-size:42px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1 class="name">The Shoebox</h1>
+    <p class="sub">Instant photos from the working property, with the date written on the back. The ones that did not come out go in the box too.</p>
+    <nav class="navline" aria-label="Mockup directions">
+      <a class="home" href="index.html">All directions</a>
+      <a href="field-journal.html">Field journal</a>
+      <a href="ledger.html">Ledger</a>
+      <a href="homestead.html">Homestead</a>
+      <a href="terminal.html">Terminal</a>
+      <a href="ephemera.html">Ephemera</a>
+      <a href="blueprint.html">Blueprint</a>
+      <a href="workshop.html">Workshop</a>
+      <a href="almanac.html">Almanac</a>
+      <a href="proof.html">Proof</a>
+      <a href="dispatches.html">Dispatches</a>
+      <a href="pegboard.html">Pegboard</a>
+      <a href="herald.html">Herald</a>
+      <a href="quilt.html">Quilt</a>
+      <a href="herbarium.html">Herbarium</a>
+      <a href="shoebox.html" aria-current="page">Shoebox</a>
+      <a href="seed-box.html">Seed Box</a>
+    </nav>
+  </header>
+
+  <section class="section" id="latest">
+    <div class="kicker">Latest print &middot; September 2026</div>
+    <h2>The array, first full year</h2>
+    <div class="lead">
+      <div class="pol lead-pol">
+        <div class="pic">
+          <svg viewBox="0 0 200 200" aria-label="Photo of a solar array under a clear sky with a sun in the corner">
+            <rect width="200" height="200" fill="#8fc4d8"/>
+            <circle cx="160" cy="46" r="20" fill="#f3c04a"/>
+            <polygon points="30,130 130,96 150,132 50,166" fill="#2b4a6b"/>
+            <path d="M52 148 L140 118 M42 138 L130 108 M70 158 L150 130" stroke="#9ab6c8" stroke-width="2" fill="none"/>
+            <rect y="166" width="200" height="34" fill="#6f8f4a"/>
+          </svg>
+        </div>
+        <div class="cap">
+          <span class="date">Sep 22, 2026 &middot; back of the print</span>
+          Solar, first full year. 8.9 MWh made, 71% of the house. The invoices are not in the frame.
+        </div>
+      </div>
+      <div class="copy">
+        <p>This is the photo I take when something finally works. It is not the whole story, and the back of the print says so.</p>
+        <p>The other side is written in pencil: $2,940 net after the credit, eleven weeks for the credit to arrive, and one string wired backwards on a Sunday.</p>
+        <p>The shoebox keeps both sides. A photo of the sun on a panel is not a receipt, and it should never be filed as one.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="prints">
+    <div class="kicker">The box</div>
+    <h2>Six prints from the last year</h2>
+    <p class="sub">Each one has a date, a caption on the back, and the cost written underneath in pencil.</p>
+
+    <div class="grid pols">
+      <div class="pol" style="--r:1.6deg">
+        <div class="pic">
+          <svg viewBox="0 0 200 200" aria-label="Workbench photo">
+            <rect width="200" height="200" fill="#d9c9a4"/>
+            <rect x="26" y="120" width="150" height="16" fill="#9a6230"/>
+            <rect x="36" y="136" width="10" height="46" fill="#7a4a24"/>
+            <rect x="154" y="136" width="10" height="46" fill="#7a4a24"/>
+            <rect x="80" y="70" width="8" height="52" fill="#5b3a1e"/>
+            <rect x="66" y="58" width="36" height="14" fill="#666"/>
+          </svg>
+        </div>
+        <div class="cap"><span class="date">Aug 09 &middot; $412, 3 weekends</span>The bench. Level enough to take a door.</div>
+      </div>
+
+      <div class="pol" style="--r:-1.4deg">
+        <div class="pic">
+          <svg viewBox="0 0 200 200" aria-label="Garden beds photo">
+            <rect width="200" height="200" fill="#bfe0a8"/>
+            <rect y="90" width="200" height="110" fill="#6b4a2c"/>
+            <g fill="#3f7d3a"><circle cx="30" cy="110" r="10"/><circle cx="70" cy="110" r="10"/><circle cx="110" cy="110" r="10"/><circle cx="150" cy="110" r="10"/><circle cx="50" cy="150" r="10"/><circle cx="130" cy="150" r="10"/></g>
+            <circle cx="90" cy="62" r="14" fill="#f2c94c"/>
+          </svg>
+        </div>
+        <div class="cap"><span class="date">Jun 14 &middot; $680 total, $210 wasted</span>Six beds. Half the dirt was the wrong dirt.</div>
+      </div>
+
+      <div class="pol" style="--r:1.1deg">
+        <div class="pic">
+          <svg viewBox="0 0 200 200" aria-label="Cold frame photo">
+            <rect width="200" height="200" fill="#c9d9c4"/>
+            <rect x="34" y="104" width="132" height="62" fill="#a9d1cf" stroke="#4b6360" stroke-width="3"/>
+            <path d="M34 104 L100 74 L166 104" fill="none" stroke="#4b6360" stroke-width="3"/>
+            <rect y="166" width="200" height="34" fill="#6b4a2c"/>
+            <g fill="#3f7d3a"><circle cx="60" cy="150" r="7"/><circle cx="100" cy="150" r="7"/><circle cx="140" cy="150" r="7"/></g>
+          </svg>
+        </div>
+        <div class="cap"><span class="date">Oct 04 &middot; no cost yet</span>Cold frame. The frames are built. The lid is still a sketch.</div>
+      </div>
+
+      <div class="pol" style="--r:-1.8deg">
+        <div class="pic">
+          <svg viewBox="0 0 200 200" aria-label="Repair kit photo">
+            <rect width="200" height="200" fill="#cfd6d3"/>
+            <line x1="60" y1="150" x2="140" y2="60" stroke="#4a4f52" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="142" cy="56" r="20" fill="none" stroke="#4a4f52" stroke-width="12"/>
+            <rect x="134" y="36" width="20" height="16" fill="#cfd6d3"/>
+          </svg>
+        </div>
+        <div class="cap"><span class="date">Nov 03 &middot; $1,905 net, 3 redos</span>Repair kit. Fourteen jobs. Net, not gross.</div>
+      </div>
+
+      <div class="pol" style="--r:1.3deg">
+        <div class="pic">
+          <svg viewBox="0 0 200 200" aria-label="Rain barrel photo">
+            <rect width="200" height="200" fill="#a9c7c0"/>
+            <path d="M60 70 Q100 60 140 70 L150 170 Q100 180 50 170 Z" fill="#5d7d86"/>
+            <ellipse cx="100" cy="70" rx="40" ry="8" fill="#7d9ca4"/>
+            <path d="M104 30 L104 58" stroke="#3b5b63" stroke-width="5"/>
+            <rect y="170" width="200" height="30" fill="#6b8f5a"/>
+          </svg>
+        </div>
+        <div class="cap"><span class="date">May 11 &middot; 2 weekends, 1 wet shed</span>Barrel. 1,100 gallons. The overflow is the lesson.</div>
+      </div>
+
+      <div class="pol" style="--r:-1deg">
+        <div class="pic">
+          <svg viewBox="0 0 200 200" aria-label="Shop photo with pink insulation">
+            <rect width="200" height="200" fill="#e7d9c5"/>
+            <polygon points="40,110 100,50 160,110" fill="#8a4b3c"/>
+            <rect x="52" y="110" width="96" height="70" fill="#e9b7b1"/>
+            <rect x="92" y="136" width="22" height="44" fill="#6a4632"/>
+            <rect x="62" y="122" width="20" height="18" fill="#bcd3da"/>
+            <rect x="118" y="122" width="20" height="18" fill="#bcd3da"/>
+          </svg>
+        </div>
+        <div class="cap"><span class="date">Feb 20 &middot; $640</span>Shop insulation. Two degrees warmer. A lot of pink dust.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="didnt">
+    <div class="kicker">Did not come out</div>
+    <h2>The prints that went in the box anyway</h2>
+    <p class="sub">Blurred, overexposed, or never taken. Each one is labelled with what went wrong, because a box of only good prints is a box of lies.</p>
+
+    <div class="grid pols">
+      <div class="pol bad" style="--r:-2.2deg">
+        <div class="pic">
+          <svg viewBox="0 0 200 200" aria-label="Overexposed bench photo">
+            <rect width="200" height="200" fill="#d9c9a4"/>
+            <rect x="26" y="120" width="150" height="16" fill="#9a6230"/>
+            <rect x="36" y="136" width="10" height="46" fill="#7a4a24"/>
+            <rect x="154" y="136" width="10" height="46" fill="#7a4a24"/>
+          </svg>
+          <span class="stamp">NO GOOD</span>
+        </div>
+        <div class="cap"><span class="date">Aug 10 &middot; $34 and a weekend</span>The planer blade. Ruined on a nail in a pallet board.</div>
+      </div>
+
+      <div class="pol bad" style="--r:1.9deg">
+        <div class="pic">
+          <svg viewBox="0 0 200 200" aria-label="Rain-damaged barrel photo">
+            <rect width="200" height="200" fill="#a9c7c0"/>
+            <path d="M60 70 Q100 60 140 70 L150 170 Q100 180 50 170 Z" fill="#5d7d86"/>
+            <ellipse cx="100" cy="70" rx="40" ry="8" fill="#7d9ca4"/>
+          </svg>
+          <span class="stamp">RAIN</span>
+        </div>
+        <div class="cap"><span class="date">Jun 02 &middot; no cost</span>The tape measure. Rain got in. Accurate to four feet.</div>
+      </div>
+
+      <div class="pol bad" style="--r:-1deg">
+        <div class="pic" style="background:#d8d2c4">
+          <svg viewBox="0 0 200 200" aria-label="Placeholder card with no photo">
+            <rect width="200" height="200" fill="#d8d2c4"/>
+            <text x="100" y="108" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="18" fill="#7a7163">no photo</text>
+          </svg>
+          <span class="stamp">NO PHOTO</span>
+        </div>
+        <div class="cap"><span class="date">Mar 14 &middot; no cost</span>The 3/8 bit. It is on a neighbour's bench. It works fine.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tally">
+    <div class="kicker">Back of the box</div>
+    <h2>The year, written in pencil</h2>
+    <div class="tally">
+      <div><b>8.9 MWh</b><span>made by the array this year</span></div>
+      <div><b>$2,940</b><span>net out of pocket, credit included</span></div>
+      <div><b>3</b><span>jobs redone free after mispricing</span></div>
+      <div><b>$1,905</b><span>net side income, parts deducted</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="note">
+    <div class="kicker">Note tucked in the lid</div>
+    <div class="note">
+      <p>Keep the bad ones. They are how you know which of the good ones are real.</p>
+      <p class="sig">&mdash; R.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span><b>The Shoebox</b> &middot; a mockup direction</span>
+    <span>Instant prints from the working property &middot; the bad ones stay in the box</span>
+    <span class="chips" aria-hidden="true">
+      <i style="background:#2f4a48"></i><i style="background:#f7f1e1"></i><i style="background:#e0a040"></i><i style="background:#c8553d"></i>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>
