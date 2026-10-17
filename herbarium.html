@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="The Herbarium - the journal as a collection of pressed specimens from the working property. Every project is a plant, and the ones that did not take are pressed too. A mockup direction for The Independent Home.">
+<title>The Herbarium - The Independent Home mockup</title>
+<style>
+:root{--paper:#f6eedf;--ink:#20251f;--muted:#686258;--green:#41583b;--rust:#9a4f2f;--gold:#d8ad61;--line:rgba(32,37,31,.18);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--serif:Georgia,serif;--sans:system-ui,-apple-system,Segoe UI,sans-serif}*{box-sizing:border-box}body{margin:0;background:linear-gradient(rgba(32,37,31,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(32,37,31,.025) 1px,transparent 1px),var(--paper);background-size:32px 32px;color:var(--ink);font-family:var(--sans);line-height:1.55}a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:16px;font-family:var(--mono);font-size:13px;text-transform:uppercase}.nav{display:flex;gap:12px;flex-wrap:wrap}.nav a{text-decoration:none;border-bottom:1px dashed var(--muted)}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start;padding:38px 0}.kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--rust);font-size:13px}.title{font-family:var(--serif);font-size:clamp(44px,7vw,86px);line-height:.9;letter-spacing:-.055em;margin:10px 0 18px}.lede{font-size:clamp(19px,2.2vw,27px);font-family:var(--serif);line-height:1.2;max-width:760px}.card,.panel{background:#fff8ea;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(32,37,31,.14);border-radius:18px;padding:20px}.mono{font-family:var(--mono);white-space:pre-wrap;font-size:14px;line-height:1.72}.scan{min-height:260px;background:repeating-linear-gradient(#fff8ea,#fff8ea 28px,rgba(65,88,59,.18) 29px);border:1px dashed var(--muted);padding:24px;font-family:"Comic Sans MS","Bradley Hand",cursive;font-size:22px;transform:rotate(-.6deg)}.note{color:var(--rust);background:rgba(154,79,47,.08);padding:1px 4px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.post{min-height:230px;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between}.post h3{font-family:var(--serif);font-size:25px;line-height:1;margin:0 0 10px}.post p{color:var(--muted);font-size:14px}.meta{font-family:var(--mono);font-size:11px;color:var(--rust);text-transform:uppercase;border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}.card{display:flex;flex-direction:column}.card>h2,.card>h3,.card>p{margin-top:0;margin-bottom:12px}.card>p:last-child{margin-bottom:0}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat b{display:block;font-family:var(--mono);font-size:34px;color:var(--green);line-height:1}.stat span{font-size:13px;color:var(--muted)}.section{border-top:2px solid var(--ink);padding-top:24px;margin-top:26px}.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 16px;border:2px solid var(--ink);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:13px}.btn.alt{background:transparent;color:var(--ink)}footer{border-top:2px solid var(--ink);margin-top:36px;padding-top:18px;color:var(--muted);font-family:var(--mono);font-size:12px}.judge{background:#edf4e6;border-left:8px solid var(--green)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:580px){.wrap{padding:14px}.top{align-items:flex-start;flex-direction:column}.grid,.statgrid{grid-template-columns:1fr}.title{font-size:46px}}
+</style>
+<style>
+:root{
+  --paper:#f0ead8;
+  --ink:#2a241c;
+  --muted:#6d6353;
+  --green:#4a6b3a;
+  --red:#a03020;
+  --ochre:#c98a2e;
+  --brown:#8a7a5c;
+  --line:rgba(42,36,24,.2);
+  --serif:Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --hand:"Segoe Print","Bradley Hand","Chalkboard SE","Marker Felt","Comic Sans MS","Liberation Serif",cursive;
+}
+body{
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.4), transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23w)' opacity='.16'/%3E%3C/svg%3E");
+  background-blend-mode:normal, multiply;
+  color:var(--ink);
+  font-family:var(--serif);
+}
+
+/* ---------- masthead ---------- */
+.masthead{text-align:center;padding:30px 0 18px}
+.name{font-family:var(--serif);font-weight:700;font-style:italic;font-size:clamp(44px,7.6vw,92px);line-height:.9;letter-spacing:-.01em;margin:0;color:var(--green)}
+.sub{font-family:var(--serif);font-style:italic;font-size:15.5px;color:var(--muted);margin:8px 0 0;max-width:62ch;margin-inline:auto}
+.navline{display:flex;flex-wrap:wrap;gap:10px 14px;justify-content:center;padding:18px 0 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.navline a{text-decoration:none;color:var(--ink);border-bottom:1px dashed var(--muted);padding-bottom:1px}
+.navline a:hover{color:var(--red);border-bottom-color:var(--red)}
+.navline a[aria-current="page"]{color:var(--red);border-bottom-color:var(--red);font-weight:700}
+.navline a.home{color:var(--muted);border-bottom-color:transparent}
+
+/* ---------- section furniture ---------- */
+.section{border-top:1px solid var(--line);padding-top:28px;margin-top:36px}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.section h2{font-family:var(--serif);font-weight:700;font-style:italic;font-size:clamp(24px,3.2vw,36px);line-height:1.1;margin:0 0 8px;max-width:34ch}
+.section .sub{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--muted);max-width:58ch;margin:0 0 22px}
+
+/* ---------- featured specimen sheet ---------- */
+.sheet{
+  position:relative;background:#f6efd8;border:1px solid var(--ink);padding:26px 24px 24px;
+  box-shadow:6px 6px 0 rgba(42,36,24,.12);margin-top:22px;
+}
+.sheet .tape{
+  position:absolute;width:64px;height:18px;background:rgba(255,255,255,.45);
+  border:1px solid rgba(42,36,24,.18);box-shadow:0 1px 2px rgba(42,36,24,.12);
+}
+.sheet .tape.tl{top:-9px;left:26px;transform:rotate(-11deg)}
+.sheet .tape.tr{top:-9px;right:30px;transform:rotate(13deg)}
+.sheet .tape.bl{bottom:-9px;left:40px;transform:rotate(10deg)}
+.sheet .tape.br{bottom:-9px;right:46px;transform:rotate(-12deg)}
+.sheet .specimen{
+  display:grid;grid-template-columns:1.15fr 0.85fr;gap:24px;align-items:start;
+}
+.sheet .art{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}
+.sheet .label{
+  background:#fffdf4;border:1px solid var(--ink);padding:14px 16px;
+  font-family:var(--mono);font-size:11.5px;line-height:1.75;letter-spacing:.04em;
+  box-shadow:3px 3px 0 rgba(42,36,24,.12);
+}
+.sheet .label .no{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--red);margin-bottom:6px}
+.sheet .label b{font-family:var(--serif);font-weight:700;font-size:14px;display:block;margin:0 0 4px}
+.sheet .label .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding:3px 0}
+.sheet .label .row:last-child{border-bottom:0}
+.sheet .label .row span:first-child{color:var(--muted)}
+.sheet .note{margin-top:18px;font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--muted);max-width:56ch}
+
+/* ---------- collection grid ---------- */
+.grid.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+.spec{
+  position:relative;background:#f6efd8;border:1px solid var(--ink);padding:18px 16px 16px;
+  box-shadow:4px 4px 0 rgba(42,36,24,.12);transition:transform .16s,box-shadow .16s;
+}
+.spec:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(42,36,24,.16)}
+.spec .tape{position:absolute;width:44px;height:14px;background:rgba(255,255,255,.5);border:1px solid rgba(42,36,24,.18);top:-7px;left:50%;margin-left:-22px;transform:rotate(-6deg)}
+.spec .art{width:100%;max-width:170px;height:110px;margin:8px auto 12px;display:block}
+.spec .no{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--red);margin:0 0 4px}
+.spec h3{font-family:var(--serif);font-weight:700;font-size:16px;line-height:1.15;margin:0 0 6px}
+.spec p{font-family:var(--serif);font-size:13.5px;line-height:1.45;color:var(--muted);margin:0 0 10px}
+.spec .cost{border-top:1px dotted var(--line);padding-top:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.spec .cost b{color:var(--green)}
+
+/* ---------- specimens that didn't take ---------- */
+.vacant{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:22px}
+.vac{position:relative;background:#f6efd8;border:1px solid var(--red);border-style:dashed;padding:20px 18px 18px;opacity:.92}
+.vac .art{width:100%;max-width:160px;height:100px;margin:6px auto 10px;display:block;filter:grayscale(1) sepia(.4) brightness(.85)}
+.vac .no{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--red);margin:0 0 4px}
+.vac h3{font-family:var(--serif);font-weight:700;font-size:16px;line-height:1.15;margin:0 0 6px;color:var(--red)}
+.vac p{font-family:var(--serif);font-size:13.5px;line-height:1.45;color:var(--muted);margin:0}
+
+/* ---------- growth log ---------- */
+.tally{margin-top:22px;border:1px solid var(--ink);background:#f6efd8}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr)}
+.tgrid > div{padding:18px 16px 20px;border-right:1px solid var(--line)}
+.tgrid > div:last-child{border-right:0}
+.tgrid b{font-family:var(--serif);font-weight:700;font-size:28px;line-height:1;display:block;color:var(--green)}
+.tgrid span{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-top:6px;line-height:1.5}
+
+/* ---------- field notes ---------- */
+.note{position:relative;margin-top:26px;padding:26px 30px 22px;background:#f6efd8;border:1px solid var(--ink);box-shadow:4px 4px 0 rgba(42,36,24,.12)}
+.note p{font-family:var(--hand);font-size:21px;line-height:1.5;margin:0 0 12px;transform:rotate(-.6deg);max-width:60ch}
+.note .sig{font-family:var(--hand);font-size:16px;color:var(--muted);transform:rotate(-.8deg);margin:0}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);margin-top:34px;padding:18px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);align-items:center}
+footer b{color:var(--ink)}
+footer .chips{display:flex;gap:5px}
+footer .chips i{width:14px;height:14px;border:1.5px solid var(--ink)}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .sheet .specimen{grid-template-columns:1fr}
+  .grid.specs{grid-template-columns:repeat(2,1fr)}
+  .vacant{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  .tgrid > div{border-bottom:1px solid var(--line)}
+  .tgrid > div:nth-child(2n){border-right:0}
+}
+@media(max-width:580px){
+  .grid.specs{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr}
+  .tgrid > div{border-right:0}
+  .name{font-size:42px}
+  .sheet{padding:20px 18px}
+  .sheet .art{max-width:260px}
+  .vac .art{max-width:130px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1 class="name">The Herbarium</h1>
+    <p class="sub">Specimens from the working property, pressed and labelled. Each one is a project that grew — or did not.</p>
+    <nav class="navline" aria-label="Mockup directions">
+      <a class="home" href="index.html">All directions</a>
+      <a href="field-journal.html">Field journal</a>
+      <a href="ledger.html">Ledger</a>
+      <a href="homestead.html">Homestead</a>
+      <a href="terminal.html">Terminal</a>
+      <a href="ephemera.html">Ephemera</a>
+      <a href="blueprint.html">Blueprint</a>
+      <a href="workshop.html">Workshop</a>
+      <a href="almanac.html">Almanac</a>
+      <a href="proof.html">Proof</a>
+      <a href="dispatches.html">Dispatches</a>
+      <a href="pegboard.html">Pegboard</a>
+      <a href="herald.html">Herald</a>
+      <a href="quilt.html">Quilt</a>
+      <a href="herbarium.html" aria-current="page">Herbarium</a>
+    </nav>
+  </div>
+
+  <section class="section" id="featured">
+    <div class="kicker">Specimen 01 &middot; collected September 2026</div>
+    <h2>The solar year, pressed and labelled</h2>
+    <p class="sub">One year of panels, dried flat and pinned to a sheet. The 29% that came off the grid is the part that did not take.</p>
+
+    <div class="sheet">
+      <span class="tape tl" aria-hidden="true"></span>
+      <span class="tape tr" aria-hidden="true"></span>
+      <span class="tape bl" aria-hidden="true"></span>
+      <span class="tape br" aria-hidden="true"></span>
+      <div class="specimen">
+        <svg class="art" viewBox="0 0 320 230" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" role="img" aria-label="Pressed sunflower specimen: stem, leaves, radiating petals, central disc, with a small sun in the corner">
+          <g stroke="#2a241c" stroke-width="2.4">
+            <path d="M160 224 V86"/>
+            <path d="M160 150 c-30 4 -52 22 -56 48 c16 4 34 -4 56 -18"/>
+            <path d="M160 110 c30 -2 52 16 56 42 c-16 4 -34 -4 -56 -16"/>
+            <path d="M160 86 c-18 -8 -30 -26 -24 -46 c14 2 22 18 24 46"/>
+            <path d="M160 86 c18 -8 30 -26 24 -46 c-14 2 -22 18 -24 46"/>
+          </g>
+          <g stroke="#a03020" stroke-width="2" fill="#a03020" fill-opacity=".35">
+            <circle cx="160" cy="86" r="14"/>
+            <path d="M160 72 l0 -26 M160 100 l0 26 M146 86 l-26 0 M174 86 l26 0"/>
+            <path d="M150 74 l-16 -16 M170 74 l16 -16 M150 98 l-16 16 M170 98 l16 16"/>
+            <path d="M148 80 l-22 -6 M172 80 l22 -6 M148 92 l-22 6 M172 92 l22 6"/>
+          </g>
+          <g fill="#c98a2e" fill-opacity=".5" stroke="#2a241c" stroke-width="1.2">
+            <circle cx="160" cy="86" r="5"/>
+          </g>
+          <g font-family="ui-monospace,Menlo,monospace" fill="#1a1612" font-size="9" letter-spacing="1">
+            <text x="24" y="210">SPECIMEN 01 &middot; HELIANTHUS ANNUUS</text>
+            <text x="24" y="222" fill="#4a6b3a">PRESSED SEP 22, 2026 &middot; THE PROPERTY, SOUTH BED</text>
+          </g>
+        </svg>
+        <div class="label">
+          <div class="no">Specimen 01 &middot; Helianthus annuus &middot; Sept 22, 2026</div>
+          <b>The solar year, pressed and labelled</b>
+          <div class="row"><span>Collected</span><span>Sept 22, 2026</span></div>
+          <div class="row"><span>Location</span><span>South bed, the array</span></div>
+          <div class="row"><span>Yield</span><span>8.9 MWh &middot; 71% of house use</span></div>
+          <div class="row"><span>Cost</span><span>$2,940 net after credit</span></div>
+          <div class="row"><span>Condition</span><span>One string wired backwards</span></div>
+          <div class="row"><span>Notes</span><span>Credit took 11 weeks</span></div>
+        </div>
+      </div>
+      <p class="note">The 29% that came off the grid is the part that did not take. It is pressed here too, in the margin, because that is where it belongs.</p>
+    </div>
+  </section>
+
+  <section class="section" id="collection">
+    <div class="kicker">The collection</div>
+    <h2>What grew, and what it cost</h2>
+    <p class="sub">Six specimens from the last year, each one labelled with what it produced and what it took.</p>
+
+    <div class="grid specs">
+      <div class="spec">
+        <span class="tape" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 110" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2.2">
+            <path d="M60 104 V58"/>
+            <path d="M60 74 c-14 2 -24 10 -26 24 c8 2 18 -2 26 -10"/>
+            <path d="M60 62 c14 -2 24 8 26 22 c-8 2 -18 -2 -26 -12"/>
+          </g>
+          <g stroke="#4a6b3a" stroke-width="2" fill="#4a6b3a" fill-opacity=".35">
+            <ellipse cx="60" cy="54" rx="20" ry="14"/>
+            <circle cx="60" cy="54" r="5"/>
+          </g>
+          <g font-family="ui-monospace,Menlo,monospace" fill="#1a1612" font-size="8">
+            <text x="4" y="104">SPEC. 02 &middot; QUERCUS ALBA</text>
+          </g>
+        </svg>
+        <div class="no">Specimen 02 &middot; Quercus alba &middot; Aug 09, 2026</div>
+        <h3>The workbench</h3>
+        <p>Three weekends, one ruined blade, and a top flat enough to level a door on.</p>
+        <div class="cost"><span>$412</span><b>3 weekends</b></div>
+      </div>
+
+      <div class="spec">
+        <span class="tape" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 110" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2.2">
+            <path d="M60 104 V46"/>
+            <path d="M60 70 c-18 2 -30 12 -32 28 c12 2 24 -4 32 -12"/>
+            <path d="M60 58 c18 -2 30 10 32 26 c-12 2 -24 -4 -32 -12"/>
+            <path d="M60 46 c-12 -4 -20 -14 -16 -26 c10 2 16 10 16 26"/>
+            <path d="M60 46 c12 -4 20 -14 16 -26 c-10 2 -16 10 -16 26"/>
+          </g>
+          <g font-family="ui-monospace,Menlo,monospace" fill="#1a1612" font-size="8">
+            <text x="4" y="104">SPEC. 03 &middot; LYCOPERSICON ESCULENTUM</text>
+          </g>
+        </svg>
+        <div class="no">Specimen 03 &middot; Lycopersicon esculentum &middot; Jun 14, 2026</div>
+        <h3>Six garden beds</h3>
+        <p>Cedar offcuts, back-breaking soil, and a load of dirt I did not need.</p>
+        <div class="cost"><span>$680</span><b>$210 wasted</b></div>
+      </div>
+
+      <div class="spec">
+        <span class="tape" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 110" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2.2">
+            <path d="M30 104 V30"/>
+            <path d="M30 40 c-10 -2 -16 6 -14 14 c6 2 12 -2 14 -8"/>
+            <path d="M30 50 c10 -2 16 6 14 14 c-6 2 -12 -2 -14 -8"/>
+            <path d="M30 60 c-10 -2 -16 6 -14 14 c6 2 12 -2 14 -8"/>
+            <path d="M30 70 c10 -2 16 6 14 14 c-6 2 -12 -2 -14 -8"/>
+          </g>
+          <g font-family="ui-monospace,Menlo,monospace" fill="#1a1612" font-size="8">
+            <text x="4" y="104">SPEC. 04 &middot; THYMUS VULGARIS</text>
+          </g>
+        </svg>
+        <div class="no">Specimen 04 &middot; Thymus vulgaris &middot; Nov 03, 2026</div>
+        <h3>The repair kit</h3>
+        <p>Fourteen jobs. Gross looked fine. Net after parts and one free redo, less so.</p>
+        <div class="cost"><span>$1,905 net</span><b>3 redos</b></div>
+      </div>
+
+      <div class="spec">
+        <span class="tape" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 110" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2.2">
+            <path d="M60 104 V40"/>
+            <path d="M60 40 c-22 -4 -34 10 -34 26 c10 2 22 -4 34 -12"/>
+            <path d="M60 40 c22 -4 34 10 34 26 c-10 2 -22 -4 -34 -12"/>
+            <path d="M60 68 c-22 -4 -34 10 -34 26 c10 2 22 -4 34 -12"/>
+            <path d="M60 68 c22 -4 34 10 34 26 c-10 2 -22 -4 34 -12"/>
+          </g>
+          <g font-family="ui-monospace,Menlo,monospace" fill="#1a1612" font-size="8">
+            <text x="4" y="104">SPEC. 05 &middot; PTERIDIUM AQUILINUM</text>
+          </g>
+        </svg>
+        <div class="no">Specimen 05 &middot; Pteridium aquilinum &middot; May 11, 2026</div>
+        <h3>The rain barrel</h3>
+        <p>1,100 gallons caught, one flooded shed, and a lesson about the overflow.</p>
+        <div class="cost"><span>2 weekends</span><b>1 wet shed</b></div>
+      </div>
+
+      <div class="spec">
+        <span class="tape" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 110" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2.2">
+            <path d="M60 104 V30"/>
+            <path d="M60 58 c-16 -2 -26 8 -28 20 c10 2 20 -4 28 -12"/>
+            <path d="M60 58 c16 -2 26 8 28 20 c-10 2 -20 -4 -28 -12"/>
+            <path d="M60 40 c-12 -4 -20 -12 -16 -22 c8 2 14 8 16 22"/>
+            <path d="M60 40 c12 -4 20 -12 16 -22 c-8 2 -14 8 -16 22"/>
+          </g>
+          <g font-family="ui-monospace,Menlo,monospace" fill="#1a1612" font-size="8">
+            <text x="4" y="104">SPEC. 06 &middot; ACHILLEA MILLEFOLIUM</text>
+          </g>
+        </svg>
+        <div class="no">Specimen 06 &middot; Achillea millefolium &middot; Feb 20, 2026</div>
+        <h3>Shop insulation</h3>
+        <p>Two degrees warmer, one weekend longer than planned, and a lot of pink dust.</p>
+        <div class="cost"><span>$640</span><b>pink dust</b></div>
+      </div>
+
+      <div class="spec">
+        <span class="tape" aria-hidden="true"></span>
+        <svg class="art" viewBox="0 0 120 110" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2.2">
+            <path d="M60 104 V46"/>
+            <path d="M60 60 c-16 -2 -26 8 -28 20 c10 2 20 -4 28 -12"/>
+            <path d="M60 60 c16 -2 26 8 28 20 c-10 2 -20 -4 -28 -12"/>
+            <path d="M60 46 c-12 -4 -20 -12 -16 -22 c8 2 14 8 16 22"/>
+            <path d="M60 46 c12 -4 20 -12 16 -22 c-8 2 -14 8 -16 22"/>
+          </g>
+          <g font-family="ui-monospace,Menlo,monospace" fill="#1a1612" font-size="8">
+            <text x="4" y="104">SPEC. 07 &middot; HELIANTHUS ANNUUS</text>
+          </g>
+        </svg>
+        <div class="no">Specimen 07 &middot; Helianthus annuus &middot; Sept 22, 2026</div>
+        <h3>The solar year, honestly</h3>
+        <p>8.9 MWh made, 71% of the house covered, and one string wired backwards on a Sunday.</p>
+        <div class="cost"><span>$2,940 net</span><b>after credit</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="failed">
+    <div class="kicker">Specimens that did not take</div>
+    <h2>What was collected, and did not grow</h2>
+    <p class="sub">Pressed anyway, with the reason in red ink. A herbarium that only keeps the successes is a herbarium I do not trust.</p>
+
+    <div class="vacant">
+      <div class="vac">
+        <svg class="art" viewBox="0 0 120 100" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2">
+            <path d="M60 94 V40"/>
+            <path d="M60 58 c-16 -2 -26 8 -28 20 c10 2 20 -4 28 -12"/>
+            <path d="M60 58 c16 -2 26 8 28 20 c-10 2 -20 -4 -28 -12"/>
+          </g>
+          <g stroke="#a03020" stroke-width="1.5" fill="none" filter="url(#wobble)">
+            <path d="M20 24 L100 90"/>
+            <path d="M100 24 L20 90"/>
+          </g>
+        </svg>
+        <div class="no">Specimen 08 &middot; Thymus vulgaris &middot; March 2026</div>
+        <h3>The 3/8 bit</h3>
+        <p>Off the shelf since March. A neighbour has it and it works fine. I just do not have it.</p>
+      </div>
+      <div class="vac">
+        <svg class="art" viewBox="0 0 120 100" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2">
+            <path d="M60 94 V30"/>
+            <path d="M60 44 c-14 0 -22 8 -20 18 c8 2 16 -4 20 -12"/>
+            <path d="M60 44 c14 0 22 8 20 18 c-8 2 -16 -4 -20 -12"/>
+          </g>
+          <g stroke="#a03020" stroke-width="1.5" fill="none" filter="url(#wobble)">
+            <path d="M20 24 L100 90"/>
+            <path d="M100 24 L20 90"/>
+          </g>
+        </svg>
+        <div class="no">Specimen 09 &middot; Mentha spicata &middot; April 2026</div>
+        <h3>The planer blade</h3>
+        <p>Ruined on a nail in a pallet board. $34 and a weekend of planing by hand.</p>
+      </div>
+      <div class="vac">
+        <svg class="art" viewBox="0 0 120 100" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2">
+            <path d="M60 94 V40"/>
+            <path d="M60 56 c-12 -2 -20 6 -18 14 c8 2 14 -2 18 -8"/>
+            <path d="M60 56 c12 -2 20 6 18 14 c-8 2 -14 -2 -18 -8"/>
+            <path d="M60 40 c-10 -4 -16 -10 -12 -18 c6 2 10 6 12 18"/>
+            <path d="M60 40 c10 -4 16 -10 12 -18 c-6 2 -10 6 -12 18"/>
+          </g>
+          <g stroke="#a03020" stroke-width="1.5" fill="none" filter="url(#wobble)">
+            <path d="M20 24 L100 90"/>
+            <path d="M100 24 L20 90"/>
+          </g>
+        </svg>
+        <div class="no">Specimen 10 &middot; Rosmarinus officinalis &middot; June 2026</div>
+        <h3>The tape measure</h3>
+        <p>Left in the rain. Numbers gone from four feet on, which is most of what I build.</p>
+      </div>
+      <div class="vac">
+        <svg class="art" viewBox="0 0 120 100" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)" aria-hidden="true">
+          <g stroke="#2a241c" stroke-width="2">
+            <path d="M60 94 V40"/>
+            <path d="M60 56 c-14 0 -22 8 -20 18 c8 2 16 -4 20 -12"/>
+            <path d="M60 56 c14 0 22 8 20 18 c-8 2 -16 -4 -20 -12"/>
+          </g>
+          <g stroke="#a03020" stroke-width="1.5" fill="none" filter="url(#wobble)">
+            <path d="M20 24 L100 90"/>
+            <path d="M100 24 L20 90"/>
+          </g>
+        </svg>
+        <div class="no">Specimen 11 &middot; Mentha spicata &middot; March 2026</div>
+        <h3>The 11-piece wrench set</h3>
+        <p>Bought before I knew what I was working on. Three sizes have ever been used.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tally">
+    <div class="kicker">Growth log</div>
+    <h2>This year, by the numbers</h2>
+    <div class="tally">
+      <div class="tgrid">
+        <div><b>8.9 MWh</b><span>made by the array this year</span></div>
+        <div><b>$2,940</b><span>net out of pocket, credit included</span></div>
+        <div><b>3</b><span>jobs redone free after mispricing</span></div>
+        <div><b>$1,905</b><span>net side income, parts deducted</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="note">
+    <div class="kicker">Field notes</div>
+    <h2>Why it is pressed</h2>
+    <div class="note">
+      <p>Everything on this page came from the property, and half of it did not take. That is the point. A herbarium that only keeps the successes is a herbarium I do not trust.</p>
+      <p class="sig">&mdash; R., in the garden.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span><b>The Herbarium</b> &middot; a mockup direction</span>
+    <span>Specimens pressed from the working property &middot; 11 collected, 4 did not take</span>
+    <span class="chips" aria-hidden="true">
+      <i style="background:#f0ead8"></i><i style="background:#4a6b3a"></i><i style="background:#a03020"></i><i style="background:#c98a2e"></i><i style="background:#2a241c"></i>
+    </span>
+  </footer>
+
+</div>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <filter id="wobble" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="19" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+</body>
+</html>
