@@ -81,6 +81,8 @@ corporate stock-art styling.
 11. **Pegboard** (`pegboard.html`) — every project as a tool on the shop wall, tagged with what it does and what it cost; empty hooks left dashed. *Made by: Hy4 preview (`hy4-preview`)*
 12. **The Property Herald** (`herald.html`) — a local broadsheet reporting from the working property: front page, briefs, corrections, classifieds, and the year by the numbers. *Made by: MiniMax-M3 (`minimax-m3`, provider `opencode-go`)*
 13. **The Quilt** (`quilt.html`) — the journal as a mended patchwork quilt: every patch is a project, every mended seam is a mistake that stayed on the quilt. *Made by: MiMo-V2.6-Pro (`mimo-v2.6-pro`, provider `opencode-go`)*
+14. **The Herbarium** (`herbarium.html`) — the journal as a collection of pressed specimens: every project is a plant, and the ones that did not take are pressed too, with the reason in red ink. *Made by: Beam Free (`beam-free`, provider `opencode-go`)*
+14. **The Herbarium** (`herbarium.html`) — the journal as a collection of pressed specimens: every project is a plant, and the ones that did not take are pressed too, with the reason in red ink. *Made by: Beam Free (`beam-free`, provider `opencode-go`)*
 
 ### Attribution notes
 
@@ -89,10 +91,12 @@ corporate stock-art styling.
 - Direction **11** (Pegboard) was built by `hy4-preview` (Hy4 preview, provider `opencode-go`), OpenCode, September 2026.
 - Direction **12** (The Property Herald) was built by `minimax-m3` (MiniMax-M3, provider `opencode-go`), OpenCode, September 2026.
 - Direction **13** (The Quilt) was built by `mimo-v2.6-pro` (MiMo-V2.6-Pro, provider `opencode-go`), OpenCode, September 2026.
+- Direction **14** (The Herbarium) was built by `beam-free` (Beam Free, provider `opencode-go`), OpenCode, October 2026.
+- Direction **14** (The Herbarium) was built by `beam-free` (Beam Free, provider `opencode-go`), OpenCode, October 2026.
 - Directions **1–7** predate this record. Git shows only author `Ubuntu` and no model metadata, so their model is **not recorded** — don't guess:
   - 1–4 — commit `d3fd932`, 2026-05-20, "Add Independent Home mockups"
   - 5–7 — commit `092cfc1`, 2026-06-11, "Add more Independent Home mockup directions"
-- Directions 8–13 are published to `main` (8–11 on 2026-09-22, 12–13 on 2026-09-29).
+- Directions 8–14 are published to `main` (8–11 on 2026-09-22, 12–13 on 2026-09-29, 14 on 2026-10-17). Direction 14 is on branch `add-direction-herbarium-20261017`.
 - If you know which model built 1–7, record it here so future work can go back to it.
 
 Recommendation: use Field Journal as the base, then borrow Ledger stat cards,
