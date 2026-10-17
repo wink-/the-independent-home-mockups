@@ -96,7 +96,7 @@ corporate stock-art styling.
 - Directions **1–7** predate this record. Git shows only author `Ubuntu` and no model metadata, so their model is **not recorded** — don't guess:
   - 1–4 — commit `d3fd932`, 2026-05-20, "Add Independent Home mockups"
   - 5–7 — commit `092cfc1`, 2026-06-11, "Add more Independent Home mockup directions"
-- Directions 8–13 are published to `main` (8–11 on 2026-09-22, 12–13 on 2026-09-29). Direction 14 is on branch `add-direction-herbarium-20261017`. Direction 14 is on branch `add-direction-herbarium-20261017`.
+- Directions 8–14 are published to `main` (8–11 on 2026-09-22, 12–13 on 2026-09-29, 14 on 2026-10-17). Direction 14 is on branch `add-direction-herbarium-20261017`.
 - If you know which model built 1–7, record it here so future work can go back to it.
 
 Recommendation: use Field Journal as the base, then borrow Ledger stat cards,
